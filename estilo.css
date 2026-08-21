@@ -12,7 +12,11 @@
     text-align: center;
 }
 body {
-    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column; /* Força Header, Layout e Footer a ficarem um embaixo do outro */
+    width: 900px;           /* Controla a largura total para não espalhar na tela */
+    margin: 20px auto;      /* Centraliza o site na tela */
+    gap: 10px;              /* Espaço entre Header, Layout e Footer */
 }
 
 .info{
@@ -25,4 +29,70 @@ body {
 
 .bold{
     font-weight: bold;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+header, nav, article, section, aside, footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+header {
+    background-color: red;
+    flex-direction: column;
+    width: 900px;
+    margin: 0 auto;
+    gap: 10px;
+    color: white;
+}
+
+nav {
+    background-color: pink;
+    width: 100%; /* Ocupa a largura total do header */
+    color: black;
+}
+
+/* Layout central: Coloca Article e Aside em linha */
+.layout-principal {
+    display: flex;
+    gap: 5px;
+}
+
+article {
+    background-color: green;
+    flex-direction: column;
+    width: 300px;
+    margin: 0 auto;
+    
+    gap: 10px;
+    color: white;
+}
+
+section {
+    background-color: lightgreen;
+    width: 100%; 
+    color: black;
+}
+
+aside {
+    background-color: lightsalmon;
+    width: 300px;
+    margin: 0 auto;    
+
+    color: black;
+}
+
+footer {
+    background-color: blue;
+    width: 900px;
+    margin: 0 auto;
+    color: white;
 }
