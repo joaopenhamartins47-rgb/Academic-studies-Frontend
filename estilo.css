@@ -1,0 +1,28 @@
+.fundo {
+    display: flex;
+    flex-direction: column;    /* Empilha o h3 e o p um em cima do outro */
+    align-items: center;       /* Centraliza o texto na horizontal */
+    justify-content: center;   /* Centraliza o texto na vertical */
+    
+    background-color: lightblue;
+    padding: 20px;
+    width: 300px;              
+    margin: 20px auto;         /* Centraliza a caixa .fundo na página */
+    border-radius: 8px;
+    text-align: center;
+}
+body {
+    background-color: antiquewhite;
+}
+
+.info{
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    background-color: cadetblue;
+    
+}
+
+.bold{
+    font-weight: bold;
+}
