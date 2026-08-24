@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Portfolio Joao Vitor</title>
+</head>
+<body>
+    <div class="divpai">
+        <header id="inicio">
+            <div>
+                Joao Vitor Penha Martins
+            </div>
+            <nav class="menu">
+                <a href="#inicio">Início</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#portfolio">Portfólio</a>
+                <a href="#contatos">Contatos</a>
+                <a href="documentos/curriculo.pdf" download>Baixar Curriculo</a>
+            </nav>
+        </header>
+        <div class="divmain">
+            <h1 class="lgrande">Olá, me chamo João Vitor<br>Desenvolvedor Backend em formação.</h1>
+            <h2>C - Python - Java - FastAPI - PostgreSQL - Machine Learning - SQL - Git - Eletrônica/hardware</h2>
+        </div>
+        <div id="sobre" class="divsobre">
+            <h1 class="lgrande">Sobre mim</h1>
+            <p>Atualmente sou estudante da Universidade do Oeste Paulista (UNOESTE) em Presidente Prudente - SP do curso Sistemas de Informação. Tenho 21 anos e desde muito cedo sempre tive muito comprometimento com os estudos e interesse enorme por tecnologia, o que me levou a formação do curso técnico de eletroeletrônica pela instituição SENAI - SP, no qual aprendi sobre instalações elétricas (TI), microcontroladores, linguagem de baixo nível e o avançado sobre componentes eletrônicos e respectivas instalações. No início de 2025 eu iniciei minha jornada pelo mundo da computação e do desenvolvimento de software, onde tenho que aprofundado com muito entusiasmo, paixão e comprometimento.</p> <br> <br>
+            <p>Com o constante estudo, criação de projetos que potencializam e desafiam meus conhecimentos e utilização de tecnologias modernas com os avanços da IA. A minha carreira está seguindo um caminho baseado em engenharia de software, sendo a base para a criação de qualquer projeto ou software, alinhado com a utilizações de LLMs e modelos de Machine Learning, propondo soluções inovadoras, automatizando processos e expondo os resultados via API unindo o melhor dos dois mundos.</p> <br><br>
+
+            <p>O meu foco atual é continuar aprendendo novas tecnologias visando implementa-las em soluções reais, por isso me interessei por entender LLMs e o cálculo por trás da incrível área de Machine Learning. Eu acredito que tudo leva a matemática e entender sobre os fundamentos, redes neurais e como uma IA interpreta uma imagem ou faz uma previsão pode abrir muitas possibilidades de crescimento de soluções dentro da área, sendo extremamente poderosa para auxiliar problemas que hoje não se tem solução</p><br><br>
+
+            <p>Também estou muito focado em continuar melhorando minha lógica de programação consistentemente, analisando técnicas de resolução de algoritmos, estrutura de dados e identicação de padrões, atualmente pratico exercícios no hackerrank, leetcode (separado por padrões de problemas como Two Pointers, hash map no neetcode) e exercícios de estrutura de dados da faculdade</p><br><br>
+
+            <p>Tudo isso me levou ao prêmio de melhor aluno do terceiro termo do meu curso, no qual eu levo com muito carinho como reconhecimento pela responsabilidade e seriedade que sempre tive com os estudos e trabalhos por onde eu passei</p>
+
+
+
+            <p>Os meus estudos e projetos estão documentados no meu github, que pode ser acessado pelo link <a href="https://github.com/joaopenhamartins47-rgb">Github</a></p>
+        </div>
+        <div id="portfolio" class="divport">
+            <h1 class="lgrande">Portfolio</h1>
+            <h2 class="subtitulo">Finance Tracker</h2>
+            <a href="https://github.com/joaopenhamartins47-rgb/Finance-Tracker">Projeto visualizável</a>
+            <p>O Finance Tracker é uma API backend para gestão de finanças pessoais, construída com FastAPI e PostgreSQL, seguindo uma arquitetura em 4 camadas (router → service → repository → core). O projeto gerencia contas, categorias e transações, com importação automática de extratos em CSV (formato Nubank) e prevenção de registros duplicados por meio de hashing determinístico. </p><br>
+
+            <p>Desenvolvido como projeto de portfólio com foco em boas práticas de engenharia backend: autenticação segura via JWT/OAuth2, proteção contra IDOR, migrações versionadas com Alembic e validação de dados com Pydantic. </p><br>
+
+            <p>Entre as principais funcionalidades estão CRUD completo de contas e categorias, classificação automática de transações por regex, deduplicação de transações via hash, e um dashboard de receitas e despesas com quebra por categoria, atualizado automaticamente conforme transações são classificadas, editadas ou removidas. O frontend é servido com Streamlit, consumindo a API separadamente do backend (Uvicorn). </p><br>
+
+            <p>A motivação do projeto nasceu de um problema real: analisar as próprias finanças de forma totalmente gratuita, ao mesmo tempo em que aprofundava conhecimento em arquitetura backend, lógica de programação, constraints de banco de dados, Alembic e tratamento de erros.</p><br>
+
+            <h3>Imagens de exemplo do projeto</h3>
+            <div class="image-column">
+                <img src="imagens/dash2.png" alt="">
+                <img src="imagens/dash3.png" alt="">
+            </div>
+
+            
+        </div>
+        <div id="sobre" class="divsobre">
+            <h1 class="lgrande">Contatos</h1>
+            <p>Você pode me encontrar em qualquer uma dessas redes sociais</p>
+            <div class="image-row">
+                <a href="https://www.instagram.com/joao_penha17">
+                    <img src="imagens/insta.avif" alt=""></a>
+                <a href="https://www.linkedin.com/in/jo%C3%A3o-vitor-penha-martins-8173b53a4/">
+                    <img src="imagens/linke.png" alt=""></a>
+                <a href="https://github.com/joaopenhamartins47-rgb">
+                    <img src="imagens/github.jpg" alt=""></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
