@@ -1,59 +1,54 @@
 * {
     font-family: Arial, Helvetica, sans-serif;
     font-size: medium;
-    box-sizing: border-box; /*Nao deixa criar barra de rolamento horizontal*/
+    box-sizing: border-box; /* Nao deixa criar barra de rolamento horizontal */
 }
-
-body{
+body {
     margin: 0;
 }
 header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
     display: flex;
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
     background-color: rgb(26, 100, 4);
     padding: 20px;
     font-size: large;
     color: aliceblue;
 }
-
-header div{
+header div {
     background-color: transparent;
 }
-
 .menu {
     display: flex;
     gap: 45px;
-    
+    flex-wrap: wrap;
 }
-
-.menu a{
+.menu a {
     color: aliceblue;
     text-decoration: None;
     background-color: transparent;
 }
-
-a{
+a {
     color: lightgreen;
-    text-decoration:underline;
+    text-decoration: underline;
     background-color: transparent;
 }
-.divpai{
+.divpai {
     background-color: beige;
     width: 100%;
     height: 100%;
 }
-
-.lgrande{
+.lgrande {
     font-size: 100px;
 }
-
-.subtitulo{
+.subtitulo {
     font-size: 70px;
 }
-
 .divmain {
     background-image: 
         linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, #060b13 100%), 
@@ -70,74 +65,117 @@ a{
     height: 1000px;
     width: 100%;
 }
-
 .divsobre {
     background-image: 
-        linear-gradient(to bottom, #060b13 0%, rgba(0, 0, 0, 0) 25%), 
+        linear-gradient(to bottom, #060b13 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 80%, #060b13 100%), 
         url(imagens/backgroundsobre.png);
     background-size: cover;       
     background-position: center; 
     background-repeat: no-repeat; 
-    align-items:baseline    ;
+    align-items: baseline;
     display: flex;
     flex-direction: column;
-    text-align:justify;
+    text-align: justify;
     color: aliceblue;
     height: fit-content;
     width: 100%;
 }
 
+.divskills {
+    background-image: 
+        linear-gradient(to bottom, #060b13 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 80%, #060b13 100%), 
+        url(imagens/backgroundskills.png);
+    background-size: cover;       
+    background-position: center; 
+    background-repeat: no-repeat; 
+    align-items: baseline;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    color: aliceblue;
+    height: fit-content;
+    width: 100%;
+}
+
+.divexperiencia {
+    background-image: 
+        linear-gradient(to bottom, #060b13 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 80%, #060b13 100%), 
+        url(imagens/backgroundexp.png);
+    background-size: cover;       
+    background-position: center; 
+    background-repeat: no-repeat; 
+    align-items: baseline;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    color: aliceblue;
+    height: fit-content;
+    width: 100%;
+}
 .divport {
     background-image: 
-        linear-gradient(to bottom, #060b13 0%, rgba(0, 0, 0, 0) 25%), 
+        linear-gradient(to bottom, #060b13 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 80%, #060b13 100%), 
         url(imagens/backgroundport.jpg);
     background-size: cover;       
     background-position: center; 
     background-repeat: no-repeat; 
-    align-items:baseline    ;
+    align-items: baseline;
     display: flex;
     flex-direction: column;
-    text-align:justify;
+    text-align: justify;
     color: aliceblue;
     height: fit-content;
     width: 100%;
 }
-
-
-p{
-    margin-left: 10%;
-    margin-right: 10%;
-}
-
-
 .image-column {
-  display: flex;
-  gap: 16px;
-  flex-direction: column;
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
 }
-
 .image-column img {
-  width: 700px;
-  height: auto;
-  object-fit: cover;
-  border-radius: 8px;
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
 }
-
 .image-row {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 30px; 
     margin-top: 25px;
+    flex-wrap: wrap;
 }
-
 .image-row img {
     width: 50px;             
     height: 50px;             
-    object-fit: contain;      /* Mantém a proporção da imagem sem distorcer */
-    transition: transform 0.3s ease; /* Transição suave para o efeito hover */
+    object-fit: contain;      
 }
 
-.image-row img:hover {
-    transform: scale(1.2);    /* Aumenta levemente o ícone ao passar o mouse */
+
+@media (max-width: 768px) {
+    .lgrande {
+        font-size: 48px;
+    }
+    .subtitulo {
+        font-size: 34px;
+    }
+    .menu {
+        gap: 20px;
+    }
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .lgrande {
+        font-size: 32px;
+    }
+    .subtitulo {
+        font-size: 24px;
+    }
 }

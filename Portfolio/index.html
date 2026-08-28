@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <title>Portfolio Joao Vitor</title>
 </head>
 <body>
-    <div class="divpai">
-        <header id="inicio">
+    <div class="divpai" id="inicio">
+        <header>
             <div>
                 Joao Vitor Penha Martins
             </div>
@@ -16,6 +17,8 @@
                 <a href="#inicio">Início</a>
                 <a href="#sobre">Sobre</a>
                 <a href="#portfolio">Portfólio</a>
+                <a href="#experiencia">Experiência</a>
+                <a href="#skills">Skills</a>
                 <a href="#contatos">Contatos</a>
                 <a href="documentos/curriculo.pdf" download>Baixar Curriculo</a>
             </nav>
@@ -25,50 +28,126 @@
             <h2>C - Python - Java - FastAPI - PostgreSQL - Machine Learning - SQL - Git - Eletrônica/hardware</h2>
         </div>
         <div id="sobre" class="divsobre">
-            <h1 class="lgrande">Sobre mim</h1>
-            <p>Atualmente sou estudante da Universidade do Oeste Paulista (UNOESTE) em Presidente Prudente - SP do curso Sistemas de Informação. Tenho 21 anos e desde muito cedo sempre tive muito comprometimento com os estudos e interesse enorme por tecnologia, o que me levou a formação do curso técnico de eletroeletrônica pela instituição SENAI - SP, no qual aprendi sobre instalações elétricas (TI), microcontroladores, linguagem de baixo nível e o avançado sobre componentes eletrônicos e respectivas instalações. No início de 2025 eu iniciei minha jornada pelo mundo da computação e do desenvolvimento de software, onde tenho que aprofundado com muito entusiasmo, paixão e comprometimento.</p> <br> <br>
-            <p>Com o constante estudo, criação de projetos que potencializam e desafiam meus conhecimentos e utilização de tecnologias modernas com os avanços da IA. A minha carreira está seguindo um caminho baseado em engenharia de software, sendo a base para a criação de qualquer projeto ou software, alinhado com a utilizações de LLMs e modelos de Machine Learning, propondo soluções inovadoras, automatizando processos e expondo os resultados via API unindo o melhor dos dois mundos.</p> <br><br>
+            <div class="container">
+                <h1 class="lgrande">Sobre mim</h1>
+                <p>Atualmente sou estudante da Universidade do Oeste Paulista (UNOESTE) em Presidente Prudente - SP do curso Sistemas de Informação. Tenho 21 anos e desde muito cedo sempre tive muito comprometimento com os estudos e interesse enorme por tecnologia, o que me levou a formação do curso técnico de eletroeletrônica pela instituição SENAI - SP, no qual aprendi sobre instalações elétricas (TI), microcontroladores, linguagem de baixo nível e o avançado sobre componentes eletrônicos e respectivas instalações. No início de 2025 eu iniciei minha jornada pelo mundo da computação e do desenvolvimento de software, onde tenho que aprofundado com muito entusiasmo, paixão e comprometimento.</p> <br> <br>
+                <p>Com o constante estudo, criação de projetos que potencializam e desafiam meus conhecimentos e utilização de tecnologias modernas com os avanços da IA. A minha carreira está seguindo um caminho baseado em engenharia de software, sendo a base para a criação de qualquer projeto ou software, alinhado com a utilizações de LLMs e modelos de Machine Learning, propondo soluções inovadoras, automatizando processos e expondo os resultados via API unindo o melhor dos dois mundos.</p> <br><br>
 
-            <p>O meu foco atual é continuar aprendendo novas tecnologias visando implementa-las em soluções reais, por isso me interessei por entender LLMs e o cálculo por trás da incrível área de Machine Learning. Eu acredito que tudo leva a matemática e entender sobre os fundamentos, redes neurais e como uma IA interpreta uma imagem ou faz uma previsão pode abrir muitas possibilidades de crescimento de soluções dentro da área, sendo extremamente poderosa para auxiliar problemas que hoje não se tem solução</p><br><br>
+                <p>O meu foco atual é continuar aprendendo novas tecnologias visando implementa-las em soluções reais, por isso me interessei por entender LLMs e o cálculo por trás da incrível área de Machine Learning. Eu acredito que tudo leva a matemática e entender sobre os fundamentos, redes neurais e como uma IA interpreta uma imagem ou faz uma previsão pode abrir muitas possibilidades de crescimento de soluções dentro da área, sendo extremamente poderosa para auxiliar problemas que hoje não se tem solução</p><br><br>
 
-            <p>Também estou muito focado em continuar melhorando minha lógica de programação consistentemente, analisando técnicas de resolução de algoritmos, estrutura de dados e identicação de padrões, atualmente pratico exercícios no hackerrank, leetcode (separado por padrões de problemas como Two Pointers, hash map no neetcode) e exercícios de estrutura de dados da faculdade</p><br><br>
+                <p>Também estou muito focado em continuar melhorando minha lógica de programação consistentemente, analisando técnicas de resolução de algoritmos, estrutura de dados e identicação de padrões, atualmente pratico exercícios no hackerrank, leetcode (separado por padrões de problemas como Two Pointers, hash map no neetcode) e exercícios de estrutura de dados da faculdade</p><br><br>
 
-            <p>Tudo isso me levou ao prêmio de melhor aluno do terceiro termo do meu curso, no qual eu levo com muito carinho como reconhecimento pela responsabilidade e seriedade que sempre tive com os estudos e trabalhos por onde eu passei</p>
+                <p>Tudo isso me levou ao prêmio de melhor aluno do terceiro termo do meu curso, no qual eu levo com muito carinho como reconhecimento pela responsabilidade e seriedade que sempre tive com os estudos e trabalhos por onde eu passei</p>
 
 
 
-            <p>Os meus estudos e projetos estão documentados no meu github, que pode ser acessado pelo link <a href="https://github.com/joaopenhamartins47-rgb">Github</a></p>
-        </div>
-        <div id="portfolio" class="divport">
-            <h1 class="lgrande">Portfolio</h1>
-            <h2 class="subtitulo">Finance Tracker</h2>
-            <a href="https://github.com/joaopenhamartins47-rgb/Finance-Tracker">Projeto visualizável</a>
-            <p>O Finance Tracker é uma API backend para gestão de finanças pessoais, construída com FastAPI e PostgreSQL, seguindo uma arquitetura em 4 camadas (router → service → repository → core). O projeto gerencia contas, categorias e transações, com importação automática de extratos em CSV (formato Nubank) e prevenção de registros duplicados por meio de hashing determinístico. </p><br>
-
-            <p>Desenvolvido como projeto de portfólio com foco em boas práticas de engenharia backend: autenticação segura via JWT/OAuth2, proteção contra IDOR, migrações versionadas com Alembic e validação de dados com Pydantic. </p><br>
-
-            <p>Entre as principais funcionalidades estão CRUD completo de contas e categorias, classificação automática de transações por regex, deduplicação de transações via hash, e um dashboard de receitas e despesas com quebra por categoria, atualizado automaticamente conforme transações são classificadas, editadas ou removidas. O frontend é servido com Streamlit, consumindo a API separadamente do backend (Uvicorn). </p><br>
-
-            <p>A motivação do projeto nasceu de um problema real: analisar as próprias finanças de forma totalmente gratuita, ao mesmo tempo em que aprofundava conhecimento em arquitetura backend, lógica de programação, constraints de banco de dados, Alembic e tratamento de erros.</p><br>
-
-            <h3>Imagens de exemplo do projeto</h3>
-            <div class="image-column">
-                <img src="imagens/dash2.png" alt="">
-                <img src="imagens/dash3.png" alt="">
+                <p>Os meus estudos e projetos estão documentados no meu github, que pode ser acessado pelo link <a href="https://github.com/joaopenhamartins47-rgb">Github</a></p>
             </div>
+        </div>
+        <div id="experiencia" class="divexperiencia">
+            <div class="container">
+                <h1 class="lgrande">Experiência</h1>
+                <div class="row g-4 mt-3">
+                    <div class="col-md-4">
+                        <div class="card h-100 bg-transparent text-white border-light">
+                            <div class="card-body">
+                                <h5 class="card-title">Técnico em Eletroeletrônica - SENAI-SP</h5>
+                                <p class="card-text">Formação técnica com foco em instalações elétricas, microcontroladores e componentes eletrônicos.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 bg-transparent text-white border-light">
+                            <div class="card-body">
+                                <h5 class="card-title">Finance Tracker - Projeto de portfólio</h5>
+                                <p class="card-text">API backend completa em FastAPI + PostgreSQL, aplicando arquitetura em camadas, autenticação JWT e boas práticas de engenharia.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 bg-transparent text-white border-light">
+                            <div class="card-body">
+                                <h5 class="card-title">LibrasConnect - Projeto de acessibilidade</h5>
+                                <p class="card-text">Reconhecimento de linguagem de sinais via MediaPipe e classificador customizado, com foco em impacto social.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="divskills" id="skills">
+            <div class="container mt-5">
+                <h2 class="subtitulo">Soft Skills</h2>
+                <div class="d-flex flex-wrap gap-2 mt-3">
+                    <span class="badge bg-success fs-6 p-2">Boa comunicação e clareza</span>
+                    <span class="badge bg-success fs-6 p-2">Facilidade em trabalhar em equipe</span>
+                    <span class="badge bg-success fs-6 p-2">Consistência em compromissos e aprendizado</span>
+                    <span class="badge bg-success fs-6 p-2">Foco em resolver problemas</span>
 
-            
+                </div>
+            </div>
+            <div class="container mt-5">
+                <h2 class="subtitulo">Hard Skills</h2>
+                <div class="d-flex flex-wrap gap-2 mt-3">
+                    <span class="badge bg-success fs-6 p-2">C</span>
+                    <span class="badge bg-success fs-6 p-2">Python</span>
+                    <span class="badge bg-success fs-6 p-2">Java</span>
+                    <span class="badge bg-success fs-6 p-2">FastAPI</span>
+                    <span class="badge bg-success fs-6 p-2">PostgreSQL</span>
+                    <span class="badge bg-success fs-6 p-2">SQL</span>
+                    <span class="badge bg-success fs-6 p-2">Git</span>
+                    <span class="badge bg-success fs-6 p-2">Machine Learning</span>
+                    <span class="badge bg-success fs-6 p-2">Eletrônica</span>
+
+                </div>
+            </div>
+        </div>
+        
+        <div id="portfolio" class="divport">
+            <div class="container">
+                <h1 class="lgrande">Portfolio</h1>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <h2 class="subtitulo">Finance Tracker</h2>
+                        <a href="https://github.com/joaopenhamartins47-rgb/Finance-Tracker">Projeto visualizável</a><br>
+                        <p>O Finance Tracker é uma API backend para gestão de finanças pessoais, construída com FastAPI e PostgreSQL, seguindo uma arquitetura em 4 camadas (router -> service -> repository -> core). O projeto gerencia contas, categorias e transações, com importação automática de extratos em CSV (formato Nubank) e prevenção de registros duplicados por meio de hashing determinístico.</p>
+                        <p>Desenvolvido como projeto de portfólio com foco em boas práticas de engenharia backend: autenticação segura via JWT/OAuth2, proteção contra IDOR, migrações versionadas com Alembic e validação de dados com Pydantic.</p>
+                        <p>Entre as principais funcionalidades estão CRUD completo de contas e categorias, classificação automática de transações por regex, deduplicação de transações via hash, e um dashboard de receitas e despesas com quebra por categoria, atualizado automaticamente conforme transações são classificadas, editadas ou removidas. O frontend é servido com Streamlit, consumindo a API separadamente do backend (Uvicorn).</p>
+                        <p>A motivação do projeto nasceu de um problema real: analisar as próprias finanças de forma totalmente gratuita, ao mesmo tempo em que aprofundava conhecimento em arquitetura backend, lógica de programação, constraints de banco de dados, Alembic e tratamento de erros.</p>
+                        <h3>Imagens de exemplo do projeto</h3>
+                        <div class="image-column">
+                            <img src="imagens/dash2.png" alt="">
+                            <img src="imagens/dash3.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h2 class="subtitulo">LibrasConnect</h2>
+                        <p><em>Repositório ainda não publicado - link em breve.</em></p>
+                        <p>Reconhecimento de linguagem de sinais em tempo real usando OpenCV e MediaPipe para extração de landmarks e um classificador customizado, com foco em acessibilidade.</p>
+                        <p>MVP ainda em construção, em conjunto com o curso Machine Learning Specialization da Deeplearning.ai/Stanford Online</p>
+                        <hr>
+                        <h2 class="subtitulo">Interpretador SQL em C</h2>
+                        <a href="https://github.com/joaopenhamartins47-rgb/Interpretador-sql.git">Projeto visualizável</a><br>
+                        <p>Projeto acadêmico de interpretador SQL em C com foco em estrutura de dados dinâmicas e relacionamento entre elas, incluindo tratamento contra vazamento de memória, busca entre tabelas, parser dos comandos SQL e relatórios e relacionamentos de estruturas totalmente dinâmicas implementadas sem funções prontas. Projeto de alto nível técnico ainda em desenvolvimento</p>
+
+                    </div>
+                    
+
+                </div>
+            </div>
         </div>
         <div id="contatos" class="divsobre">
-            <h1 class="lgrande">Contatos</h1>
-            <p>Você pode me encontrar em qualquer uma dessas redes sociais</p>
-            <div class="image-row">
-                <a href="https://www.instagram.com/joao_penha17">
-                    <img src="imagens/insta.avif" alt=""></a>
-                <a href="https://www.linkedin.com/in/jo%C3%A3o-vitor-penha-martins-8173b53a4/">
-                    <img src="imagens/linke.png" alt=""></a>
-                <a href="https://github.com/joaopenhamartins47-rgb">
-                    <img src="imagens/github.jpg" alt=""></a>
+            <div class="container">
+                <h1 class="fs-1">Contatos</h1>
+                <p>Você pode me encontrar em qualquer uma dessas redes sociais</p>
+                <div class="image-row">
+                    <a href="https://www.instagram.com/joao_penha17">
+                        <img src="imagens/insta.avif" alt=""></a>
+                    <a href="https://www.linkedin.com/in/jo%C3%A3o-vitor-penha-martins-8173b53a4/">
+                        <img src="imagens/linke.png" alt=""></a>
+                    <a href="https://github.com/joaopenhamartins47-rgb">
+                        <img src="imagens/github.jpg" alt=""></a>
+                </div>
             </div>
         </div>
     </div>
