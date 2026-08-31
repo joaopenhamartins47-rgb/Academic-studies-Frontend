@@ -64,6 +64,7 @@ a {
     color: aliceblue;
     height: 1000px;
     width: 100%;
+    scroll-margin-top: 50px;
 }
 .divsobre {
     background-image: 
@@ -79,6 +80,7 @@ a {
     color: aliceblue;
     height: fit-content;
     width: 100%;
+    scroll-margin-top: 50px;
 }
 
 .divskills {
@@ -95,6 +97,7 @@ a {
     color: aliceblue;
     height: fit-content;
     width: 100%;
+    scroll-margin-top: 50px;
 }
 
 .divexperiencia {
@@ -111,6 +114,7 @@ a {
     color: aliceblue;
     height: fit-content;
     width: 100%;
+    scroll-margin-top: 50px;
 }
 .divport {
     background-image: 
@@ -126,6 +130,7 @@ a {
     color: aliceblue;
     height: fit-content;
     width: 100%;
+    scroll-margin-top: 50px;
 }
 .image-column {
     display: flex;
