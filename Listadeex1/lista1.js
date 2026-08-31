@@ -12,3 +12,35 @@ function invertido(str)
 }
 
 console.log(invertido("Invertido"))
+
+/*
+    2. Implemente um script JS que exiba uma frase de trás para frente (inverter a ordem das palavras, sem inverter as letras). Exemplo:
+        ◦ Frase: A possibilidade de realizarmos um sonho é o que torna a vida interessante
+        ◦ Frase invertida: interessante vida a torna que o é sonho um realizarmos de possibilidade A
+*/
+
+function inverter_frase(str) {
+    let frase = "";
+
+    for (let i = str.length - 1; i >= 0; i--) {
+        if (str[i] === ' ') {
+            
+
+            let j = i + 1;
+            while (j < str.length && str[j] !== ' ') {
+                frase += str[j];
+                j++;
+            }
+            
+            frase += ' ';
+        }
+    }
+
+    let k = 0;
+    while (k < str.length && str[k] !== ' ') {
+        frase += str[k];
+        k++;
+    }
+
+    return frase;
+}
