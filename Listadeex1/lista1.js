@@ -45,6 +45,22 @@ function inverter_frase(str) {
     return frase;
 }
 
+//Jeito javascript de inverter frase
+
+function inverter_javascript(str)
+{
+    let palavras = [];
+    let frase = str.split(" ");
+    let j = 0;
+
+    for(let i = frase.length-1; i>=0; i--)
+    {
+        palavras.push(frase[i]);
+    }
+    return palavras.join(" ");
+
+}
+
 /*
 3 - Implemente um algoritmo onde o usuário possa guardar palavras dentro de um vetor. 
 Antes de inserir uma nova palavra dentro do vetor, 
