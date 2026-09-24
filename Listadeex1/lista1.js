@@ -68,3 +68,21 @@ function guardar_palavras(vet, palavra)
     }
     return vet;
 }
+
+/*
+4 - Construa um script JS que remova as vogais de uma string (Considere também as vogais acentuadas). 
+*/
+
+function remover_vogais(str)
+{
+    let vogais = "aeiouáàãéêâôíóõúAEIOUÁÀÃÉÊÂÔÍÓÕÚ";    
+    let resultado = "";
+    for(let i=0;i<str.length;i++)
+    {
+        if(vogais.indexOf(str[i]) === -1)
+        {
+            resultado += str[i];
+        }
+    }
+    return resultado
+}
