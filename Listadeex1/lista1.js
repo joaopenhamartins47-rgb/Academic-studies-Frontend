@@ -86,3 +86,81 @@ function remover_vogais(str)
     }
     return resultado
 }
+
+
+/*
+5 - Crie um script JS para calcular o salário líquido através de um salário bruto (decimal) de entrada. 
+O salário líquido é calculado descontando as porcentagens de IR E INSS. 
+Cada faixa salarial, possui porcentagens diferentes, utilize as tabelas abaixo para consultar:
+*/
+
+function calcular_salario()
+{
+    let salario_bruto = prompt("Digite o seu salario bruto!");
+    salario_bruto = salario_bruto.replace(",", ".");
+    salario_bruto = parseFloat(salario_bruto);
+    let inss = 0, ir=0, aliquota=0.0;
+    if(!isNaN(salario_bruto))
+    {
+        
+        if(salario_bruto <= 1621.00)
+        {
+            aliquota = 0.075;
+            inss = aliquota*salario_bruto;
+        }
+        else if(salario_bruto <= 2902.84)
+        {
+            aliquota = 0.09;
+            inss = salario_bruto *aliquota - 24.32;
+        }
+        else if(salario_bruto <= 4354.27)
+        {
+            aliquota = 0.12;
+            inss = salario_bruto *aliquota - 111.4;
+        }
+        else if(salario_bruto <= 8475.55)
+        {
+            aliquota = 0.14;
+            inss = salario_bruto * aliquota - 198.49;
+        }
+        else
+        {
+            inss = 8475.55 * 0.14 - 198.49; 
+        }
+        
+
+        let salario_liquido = 0.0;
+        salario_bruto -= inss;
+        if(salario_bruto <= 2259.2)
+        {
+            salario_liquido = salario_bruto;
+        }
+        else if(salario_bruto <= 2826.65)
+        {
+            aliquota = 0.075;
+            ir = salario_bruto *aliquota - 169.44;
+        }
+        else if(salario_bruto <= 3751.05)
+        {
+            aliquota = 0.15;
+            ir = salario_bruto *aliquota - 381.44;
+        }
+        else if(salario_bruto <= 4664.68)
+        {
+            aliquota = 0.225;
+            ir = salario_bruto*aliquota - 662.77;
+        }
+        else
+        {
+            aliquota = 0.275;
+            ir = salario_bruto * aliquota - 896;
+        }
+        if(ir > 0)
+        {
+            salario_liquido = salario_bruto - ir;
+        }
+
+        console.log("Salario liquido: " + salario_liquido.toFixed(2) + "\nINSS: " + inss.toFixed(2) + "\nIR: " + ir.toFixed(2));
+    }
+}
+
