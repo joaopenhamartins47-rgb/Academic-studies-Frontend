@@ -44,3 +44,27 @@ function inverter_frase(str) {
 
     return frase;
 }
+
+/*
+3 - Implemente um algoritmo onde o usuário possa guardar palavras dentro de um vetor. 
+Antes de inserir uma nova palavra dentro do vetor, 
+verifique se a mesma não existe dentro do vetor. 
+Caso exista, avise o usuário e não faça a inserção
+*/
+
+function guardar_palavras(vet, palavra)
+{
+    var existe = false;
+    for(let i = 0; i<vet.length && !existe; i++)
+    {
+        if(palavra == vet[i])
+           existe = true;
+    }
+    if(existe)
+        console.log("Palavra ja existente no vetor!\n");
+    else
+    {
+        vet[vet.length] = palavra;
+    }
+    return vet;
+}
