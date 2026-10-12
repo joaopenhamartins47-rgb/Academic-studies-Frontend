@@ -5,75 +5,77 @@ document.addEventListener("DOMContentLoaded", function() {
     let categoriaAnimais = new Categoria("Animais");
     let categoriaCotidiano = new Categoria("Cotidiano");
 
+
+    var PASTA_IMAGENS = "../imagens/";
     // Lista de piadas
     let piadas = [
         new Piada(
             "O código",
             "Meu código tem 3 camadas de abstração. Nenhuma delas eu consigo explicar.",
-            "https://placehold.co/600x300?text=Programacao",
+            PASTA_IMAGENS + "p1.jpg",
             categoriaProgramacao
         ),
 
         new Piada(
             "POO",
             "Um programador ama tanto herança que criou 7 níveis de classes só para imprimir \"Hello World!\"",
-            "https://placehold.co/600x300?text=Programacao",
+            PASTA_IMAGENS + "p2.jpg",
             categoriaProgramacao
         ),
 
         new Piada(
             "Java",
             "Por que o Java foi ao psicólogo? Porque tinha muitos problemas de classe!",
-            "https://placehold.co/600x300?text=Programacao",
+            PASTA_IMAGENS + "p3.jpg",
             categoriaProgramacao
         ),
 
         new Piada(
             "Machine Learning",
             "Machine learning: 90% limpar dados, 10% reclamar de ter que limpar dados.",
-            "https://placehold.co/600x300?text=Programacao",
+            PASTA_IMAGENS + "ml.pjg",
             categoriaProgramacao
         ),
 
         new Piada(
             "Animal antigo",
             "Qual é o animal mais antigo do mundo? A zebra, porque ela ainda é em preto e branco.",
-            "https://placehold.co/600x300?text=Animais",
+            PASTA_IMAGENS + "fossil.pjg",
             categoriaAnimais
         ),
 
         new Piada(
             "A cozinha",
             "Entrei na cozinha para buscar uma coisa. Já abri a geladeira três vezes e ainda não lembrei o que era.",
-            "https://placehold.co/600x300?text=Cotidiano",
+            PASTA_IMAGENS + "cozinha.jpg",
             categoriaCotidiano
         ),
 
         new Piada(
             "O peixe",
             "Por que o peixe não gosta de jogar futebol? Porque tem medo da rede!",
-            "https://placehold.co/600x300?text=Animais",
+            PASTA_IMAGENS + "peixe.jpg",
             categoriaAnimais
         ),
 
         new Piada(
             "A Aranha",
             "O que a aranha faz quando quer ficar famosa? Cria um perfil na web.",
-            "https://placehold.co/600x300?text=Animais",
+            PASTA_IMAGENS + "aranha.jpg",
             categoriaAnimais
         ),
 
         new Piada(
             "O atraso",
             "Cheguei atrasado ao trabalho porque o despertador tocou e eu não queria interromper!",
-            "https://placehold.co/600x300?text=Cotidiano",
+            PASTA_IMAGENS + "despertador.jpg",
             categoriaCotidiano
         ),
 
         new Piada(
             "A Louça",
             "Vou lavar a louça depois. A louça: \"Eu espero... mas vou chamar os amigos.\"",
-            "https://placehold.co/600x300?text=Cotidiano",
+            PASTA_IMAGENS + "louca.jpg",
             categoriaCotidiano
         )
     ];
