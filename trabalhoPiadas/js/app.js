@@ -120,16 +120,32 @@ document.addEventListener("DOMContentLoaded", function() {
             let categoriaEscolhida = selectCategoria.value;
 
             if (categoriaEscolhida !== "") {
-                piadasDisponiveis = piadas.filter(function(piada) {
-                    return piada.categoria.nome === categoriaEscolhida;
-                });
+                let daCategoria = [];
+
+                for (let i = 0; i < piadas.length; i++) {
+                    let piada = piadas[i];
+
+                    if (piada.categoria.nome === categoriaEscolhida) {
+                        daCategoria.push(piada);
+                    }
+                }
+
+                piadasDisponiveis = daCategoria;
             }
 
             // Tira a última piada da lista, se houver outras opções
             if (piadasDisponiveis.length > 1) {
-                piadasDisponiveis = piadasDisponiveis.filter(function(piada) {
-                    return piada !== ultimaPiada;
-                });
+                let semUltima = [];
+
+                for (let i = 0; i < piadasDisponiveis.length; i++) {
+                    let piada = piadasDisponiveis[i];
+
+                    if (piada !== ultimaPiada) {
+                        semUltima.push(piada);
+                    }
+                }
+
+                piadasDisponiveis = semUltima;
             }
 
             if (piadasDisponiveis.length > 0) {
