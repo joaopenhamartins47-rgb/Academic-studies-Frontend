@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piadas Aleatórias</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <header class="bg-primary text-white text-center py-4">
+        <h1>Piadas Aleatórias</h1>
+        <p class="mb-0">Escolha uma categoria</p>
+    </header>
+
+    <main class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6">
+                <div class="card shadow">
+                    <div class="card-body p-4">
+                        <h2 class="card-title text-center mb-4">Escolha uma categoria</h2>
+
+                        <div class="mb-3">
+                            <label for="categoria" class="form-label">Categoria</label>
+                            <select id="categoria" class="form-select"></select>
+                        </div>
+
+                        <div class="d-grid mb-4">
+                            <button type="button" id="btnSortear" class="btn btn-primary">Sortear piada</button>
+                        </div>
+
+                        <hr>
+
+                        <div class="text-center">
+                            <span id="categoriaPiada" class="badge text-bg-secondary mb-3"></span>
+                            <h3 id="tituloPiada" class="h4 mb-3"></h3>
+                            <img id="imagemPiada" src="" alt="Imagem da piada" class="img-fluid rounded mb-3">
+                            <p id="textoPiada" class="fs-5"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center text-muted py-3">
+        <p class="mb-0">Trabalho de Programação Orientada a Objetos</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/categorias.js"></script>
+    <script src="../js/piadas.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+</html>
