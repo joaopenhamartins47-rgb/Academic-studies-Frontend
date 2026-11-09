@@ -84,5 +84,56 @@
         });
         
     </script>
+
+
+    <!--Exercicio 3-->
+    <!-- Exibição no formato 00:00 exigido na lista -->
+    <h1 id="visorTempo">00:00</h1>
+    <button id="btnIniciar">Iniciar</button>
+    <button id="btnZerar">Zerar</button>
+    <script>
+        var visor = document.getElementById("visorTempo");
+        var btnIniciar = document.getElementById("btnIniciar");
+        var btnZerar = document.getElementById("btnZerar");
+        var segundos = 0;
+        var minutos = 0;
+        var intervaloCronometro; // Variável para guardar o processo do setInterval
+
+        function formatarTempo(min, seg) {
+            var minFormatado = min < 10 ? "0" + min : min;
+            var segFormatado = seg < 10 ? "0" + seg : seg;
+            return minFormatado + ":" + segFormatado;
+        }
+
+        btnIniciar.addEventListener("click", function() {
+            
+            clearInterval(intervaloCronometro); 
+
+            // Inicia a repetição e guarda a "chave" dela na variável
+            intervaloCronometro = setInterval(function() {
+                segundos++; 
+
+                if (segundos === 60) { // Bateu 60 segundos, vira 1 minuto
+                    segundos = 0;
+                    minutos++;
+                }
+
+                // Atualiza a tela com os valores novos já formatados
+                visor.innerHTML = formatarTempo(minutos, segundos); 
+            }, 1000); // 1000 milissegundos de intervalo
+        });
+
+        btnZerar.addEventListener("click", function() {
+            // 1. Para o processo de repetição na memória
+            clearInterval(intervaloCronometro); 
+            
+            // 2. Zera a matemática
+            segundos = 0; 
+            minutos = 0;
+            
+            // 3. Zera o visual da tela
+            visor.innerHTML = "00:00"; 
+        });
+    </script>
 </body>
 </html>
