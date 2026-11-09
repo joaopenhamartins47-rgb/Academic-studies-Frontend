@@ -42,9 +42,50 @@
         seletor.addEventListener("change", function() {
             // 3. Pegamos o valor atual do select (seletor.value) 
             // e aplicamos na cor de fundo (backgroundColor) da div
-            minhaDiv.style.backgroundColor = seletor.value;
+            minhaDiv.style.backgroundColor = seletor.value; <------------------------- chave para a resolucao do problema
         }, false);
     </script>
 </body>
 </html>
 */
+
+
+/*
+2 - Crie uma página HTML que exibe um número qualquer (de preferência 0) e dois botões. Um dos botões ao ser clicado deverá incrementar o número e o outro decrementar. Além disso, ao realizar a operação dos botões, os números pares deverão ser exibidos em azul e os ímpares em verde. Exemplo: Se o número inicial for zero, ao incrementar o número a ser exibido será 1 com a cor de fonte verde, se incrementar mais uma vez, será exibido o 2 com a cor de fonte azul.
+
+<script>
+    var numero = document.querySelector("#visorNumero");
+    var num = parseInt(numero.innerHTML);
+
+    var botao1 = document.querySelector("#btnIncrementar");
+    var botao2 = document.querySelector("#btnDecrementar");
+
+
+    function atualizar_cor()
+    {
+        if(num % 2 == 0)
+        {
+            numero.style.color = "blue";
+        }   
+        else
+            numero.style.color = "green";
+    }
+    botao1.addEventListener("click", function(){
+        num++;
+        numero.innerHTML = num;
+        atualizar_cor();
+    });
+    botao2.addEventListener("click", function(){
+        if(num > 0)
+        {
+            num--;
+        }
+        numero.innerHTML = num;
+        atualizar_cor();
+    });
+        
+</script>
+*/
+
+
+

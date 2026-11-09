@@ -41,5 +41,48 @@
             minhaDiv.style.backgroundColor = seletor.value;
         }, false);
     </script>
+
+
+
+    <!--Exercicio 2-->
+    <!-- Elemento que exibe o número inicial (0) -->
+    <h1 id="visorNumero">0</h1>
+
+    <!-- Botões para incrementar e decrementar -->
+    <button id="btnIncrementar">Incrementar</button>
+    <button id="btnDecrementar">Decrementar</button>
+
+    <script>
+        var numero = document.querySelector("#visorNumero");
+        var num = parseInt(numero.innerHTML);
+
+        var botao1 = document.querySelector("#btnIncrementar");
+        var botao2 = document.querySelector("#btnDecrementar");
+
+
+        function atualizar_cor()
+        {
+            if(num % 2 == 0)
+            {
+                numero.style.color = "blue";
+            }   
+            else
+                numero.style.color = "green";
+        }
+        botao1.addEventListener("click", function(){
+            num++;
+            numero.innerHTML = num;
+            atualizar_cor();
+        });
+        botao2.addEventListener("click", function(){
+            if(num > 0)
+            {
+                num--;
+            }
+            numero.innerHTML = num;
+            atualizar_cor();
+        });
+        
+    </script>
 </body>
 </html>
