@@ -26,6 +26,16 @@
             let maius = nome.toUpperCase();
             document.write('<h1> ' + maius + '! </h1>')
         }
+        function mostrarFoco() {
+            document.getElementById('mensagemStatus').textContent = 'Você está preenchendo o nome';
+        }
+        function mostrarBlur() {
+            document.getElementById('mensagemStatus').textContent = 'Você saiu do campo';
+        }
+        function mostrarChange() {
+            document.getElementById('mensagemStatus').textContent = 'Você saiu do campo e alterou o valor';
+        }
+
     </script>
 
 </head>
@@ -50,6 +60,19 @@
         <input type="text" id="nome" class="form-control">
         <button class="btn btn-primary" onclick="maiusculo(document.getElementById('nome').value)">Transformar em maiusculo</button>
     </div>
+    <div class="container mt-3">
+        <label for="nomeCampo">Nome:</label>
+        <input type="text" id="nomeCampo" class="form-control"
+            onfocus="mostrarFoco()" onblur="mostrarBlur()">
+        <p id="mensagemStatus"></p>
+    </div>
+    <div class="container mt-3">
+        <label for="nomeCampo">Idade:</label>
+        <input type="text" id="id_idade" class="form-control"
+            onfocus="mostrarFoco()" onchange="mostrarChange()">
+        <p id="mensagemStatus"></p>
+    </div>
+
     
     
 </body>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 1</title>
+    <style>
+        /* Estilo básico para a div ter um tamanho visível na tela */
+        #minhaDiv {
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            margin-top: 20px;
+            transition: background-color 0.3s; /* Deixa a troca de cor mais suave */
+        }
+    </style>
+</head>
+<body>
+
+    <label for="seletorCor">Escolha a cor da caixa:</label>
+    <!-- Os valores (value) das options estão em inglês para o CSS entender as cores nativamente -->
+    <select id="seletorCor">
+        <option value="white">Selecione...</option>
+        <option value="blue">Azul</option>
+        <option value="green">Verde</option>
+        <option value="red">Vermelho</option>
+        <option value="yellow">Amarelo</option>
+    </select>
+
+    <!-- A div que vai mudar de cor -->
+    <div id="minhaDiv"></div>
+
+    <script>
+        // 1. Selecionamos o select e a div no HTML
+        var seletor = document.querySelector("#seletorCor");
+        var minhaDiv = document.querySelector("#minhaDiv");
+
+        // 2. Adicionamos o evento 'change' (mudança) ao select
+        seletor.addEventListener("change", function() {
+            // 3. Pegamos o valor atual do select (seletor.value) 
+            // e aplicamos na cor de fundo (backgroundColor) da div
+            minhaDiv.style.backgroundColor = seletor.value;
+        }, false);
+    </script>
+</body>
+</html>
