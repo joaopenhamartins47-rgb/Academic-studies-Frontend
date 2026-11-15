@@ -41,19 +41,16 @@
 					<div class="col-lg-8">
 						<div class="card p-4">
 							<div id="areaComprovante"></div>
-							<form id="formAgendamento" onsubmit="realizarAgendamento(event)">
+							<form novalidate id="formAgendamento" onsubmit="realizarAgendamento(event)">
 								<input type="hidden" id="escolhaProfissional" value="Dra. Ana Souza">
-								<label class="form-label">Selecione uma data</label>
-								<input type="date" class="form-control mb-4" id="dataAgendamento" required>
-								<h5>Horário</h5>
-								<select id="horarioAgendamento" class="form-select mb-4" required>
-									<option value="">Escolha um horário...</option>
-									<option value="09:00">09:00</option>
-									<option value="10:00">10:00</option>
-									<option value="14:00">14:00</option>
-									<option value="15:00">15:00</option>
-									<option value="16:00">16:00</option>
-								</select>
+								<label for="dataAgendamento" class="form-label">Selecione uma data</label>
+								<input type="date" class="form-control" id="dataAgendamento" required onchange="atualizarHorariosConsulta()" aria-describedby="ajudaData erroAgendamento">
+                                <div class="invalid-feedback">Escolha um dia disponível para este atendimento.</div>
+                                <p id="ajudaData" class="form-text mb-4"></p>
+								<label for="horarioAgendamento" class="form-label">Horário</label>
+								<select id="horarioAgendamento" class="form-select" required disabled><option value="">Escolha um horário...</option></select>
+                                <div class="invalid-feedback">Escolha um horário futuro disponível.</div>
+                                <p id="erroAgendamento" class="text-danger mt-3" role="status" aria-live="polite"></p>
 								<button type="submit" class="btn btn-success w-100">Confirmar agendamento</button>
 							</form>
 						</div>
