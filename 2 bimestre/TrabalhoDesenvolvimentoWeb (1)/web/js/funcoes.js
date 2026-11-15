@@ -221,147 +221,223 @@ var profissionais = [
 ];
 var profissionalSelecionado = profissionais[0];
 
-function validarLogin(event) 
+function validarLogin(event)
 {
-    event.preventDefault(); 
-
-    var email = document.getElementById("emailLogin").value; 
-    var senha = document.getElementById("senhaLogin").value;
-    var erro = "";
-
-    if (email == "")
-        erro = erro + "O campo de e-mail não pode ficar vazio.<br>";
-    else if (email.indexOf("@") == -1 || email.indexOf(".") == -1 || email.indexOf(" ") != -1)
-        erro = erro + "Por favor, insira um e-mail válido.<br>";
-    else 
-    {
-        var emailMinusculo = email.toLowerCase();
-        if (emailMinusculo.indexOf("@gmail.") == -1 && emailMinusculo.indexOf("@hotmail.") == -1)
-            erro = erro + "E-mail inválido.<br>";
-    }
-
-    if (senha == "")
-        erro = erro + "A senha não pode estar vazia.<br>";
-    else if (senha.length < 6)
-        erro = erro + "A senha deve ter pelo menos 6 caracteres.<br>";
-
-    var caixaErro = document.getElementById("erroLogin");
-    
-    if (erro != "") 
-    {
-        caixaErro.innerHTML = erro;
-        caixaErro.style.display = "block";
-    } 
-    else 
-    {
-        caixaErro.style.display = "none";
-        window.location.href = "index.html"; 
-    }
+    event.preventDefault();
+    if (validarFormulario("formLogin", "erroLogin"))
+        window.location.href = "index.html";
 }
 
-function validarCadastro(event) 
+function validarCadastro(event)
 {
-    event.preventDefault(); 
-
-    var email = document.getElementById("emailCadastro").value;
-    var senha = document.getElementById("senhaCadastro").value;
-    var confirmaSenha = document.getElementById("confirmaSenhaCadastro").value;
-    var tipoUsuario = document.getElementById("tipoUsuario").value;
-    var erro = "";
-
-    if (email == "")
-        erro = erro + "O campo de e-mail não pode ficar vazio.<br>";
-    else if (email.indexOf("@") == -1 || email.indexOf(".") == -1 || email.indexOf(" ") != -1)
-        erro = erro + "Por favor, insira um e-mail válido.<br>";
-    else 
-    {
-        var emailMinusculo = email.toLowerCase();
-        if (emailMinusculo.indexOf("@gmail.") == -1 && emailMinusculo.indexOf("@hotmail.") == -1)
-            erro = erro + "E-mail inválido.<br>";
-    }
-
-    if (senha.length < 6)
-        erro = erro + "A senha deve ter pelo menos 6 caracteres.<br>";
-
-    if (senha != confirmaSenha)
-        erro = erro + "As senhas não coincidem.<br>";
-
-    if (tipoUsuario == "")
-        erro = erro + "Selecione o tipo de conta.<br>";
-
+    event.preventDefault();
     alternarCamposCadastro();
-    var formulario = document.getElementById("formCadastro");
-    formulario.classList.add("was-validated");
-
-    if (!formulario.checkValidity())
-        erro = erro + "Confira os campos obrigatórios e os valores informados.<br>";
-
-    var caixaErro = document.getElementById("erroCadastro");
-
-    if (erro != "") 
+    if (validarFormulario("formCadastro", "erroCadastro"))
     {
-        caixaErro.innerHTML = erro;
-        caixaErro.style.display = "block";
-    }
-    else 
-    {
-        caixaErro.style.display = "none";
-        
         var toast = document.getElementById("toastCadastro");
-        if (toast) 
-        {
-            toast.style.visibility = "visible";
-            toast.style.opacity = "1";
-            
-            setTimeout(function() {window.location.href = "login.html"; }, 2500);
-        }
+        toast.style.visibility = "visible";
+        toast.style.opacity = "1";
+        setTimeout(function() { window.location.href = "login.html"; }, 2500);
     }
 }
 
-function validarContato(event) 
+function validarContato(event)
 {
-    event.preventDefault(); 
-
-    var nome = document.getElementById("nomeContato").value;
-    var email = document.getElementById("emailContato").value;
-    var mensagem = document.getElementById("mensagemContato").value;
-    var erro = "";
-
-    if (email == "")
-        erro = erro + "O campo de e-mail não pode ficar vazio.<br>";
-    else if (email.indexOf("@") == -1 || email.indexOf(".") == -1 || email.indexOf(" ") != -1)
-        erro = erro + "Insira um e-mail válido.<br>";
-    else 
+    event.preventDefault();
+    if (validarFormulario("formContato", "erroContato"))
     {
-        var emailMinusculo = email.toLowerCase();
-        if (emailMinusculo.indexOf("@gmail.") == -1 && emailMinusculo.indexOf("@hotmail.") == -1)
-            erro = erro + "E-mail inválido.<br>";
-    }
-
-    var caixaErro = document.getElementById("erroContato");
-
-    if (erro != "") 
-    {
-        caixaErro.innerHTML = erro;
-        caixaErro.style.display = "block";
-    } 
-    else 
-    {
-        caixaErro.style.display = "none";
-        document.getElementById("nomeContato").value = "";
-        document.getElementById("emailContato").value = "";
-        document.getElementById("assuntoContato").value = ""; 
-        document.getElementById("mensagemContato").value = "";
-
+        document.getElementById("formContato").reset();
+        limparValidacao("formContato");
         var toast = document.getElementById("toastSucesso");
-        if (toast) 
+        toast.style.visibility = "visible";
+        toast.style.opacity = "1";
+        setTimeout(function() { toast.style.visibility = "hidden"; toast.style.opacity = "0"; }, 4000);
+    }
+}
+
+// Cálculo dos dois dígitos verificadores, baseado no exemplo da aula.
+function cpfValido(valor)
+{
+    var cpf = valor.replace(/[.\-]/g, "");
+    var valido = /^\d{11}$/.test(cpf);
+    var repetido = true;
+    for (var i = 1; i < cpf.length; i++)
+    {
+        if (cpf.charAt(i) != cpf.charAt(0))
+            repetido = false;
+    }
+    if (repetido)
+        valido = false;
+    if (valido)
+    {
+        for (var tamanho = 9; tamanho <= 10; tamanho++)
         {
-            toast.style.visibility = "visible";
-            toast.style.opacity = "1";
-            setTimeout(function() {toast.style.opacity = "0"; setTimeout(function() {toast.style.visibility = "hidden";}, 400);}, 4000);
+            var soma = 0;
+            for (var j = 0; j < tamanho; j++)
+                soma = soma + Number(cpf.charAt(j)) * (tamanho + 1 - j);
+            var digito = 11 - soma % 11;
+            if (digito >= 10)
+                digito = 0;
+            if (digito != Number(cpf.charAt(tamanho)))
+                valido = false;
+        }
+    }
+    return valido;
+}
+
+function mensagemCampo(campo)
+{
+    var valor = campo.value.trim();
+    var erro = "";
+    var id = campo.id;
+    if (!campo.matches(":disabled"))
+    {
+        if (campo.type == "checkbox")
+        {
+            if (campo.required && !campo.checked)
+                erro = "Marque a autorização para continuar.";
+        }
+        else if (campo.validity.badInput)
+            erro = "Informe um valor válido.";
+        else if (campo.required && valor == "")
+            erro = "Preencha este campo.";
+        else if (valor != "")
+        {
+            if (campo.type == "email" && !/^[^\s@]+@[^\s@.]+(?:\.[^\s@.]+)+$/.test(valor))
+                erro = "Informe um e-mail válido, como nome@dominio.com.";
+            else if (id == "cpfCadastro" && !cpfValido(valor))
+                erro = "Informe um CPF com 11 dígitos e verificadores válidos.";
+            else if (id == "telefoneCadastro" || id == "telefoneContato")
+            {
+                var telefone = valor.replace(/[()\s-]/g, "");
+                if (!/^[1-9][0-9](?:[2-5][0-9]{7}|9[0-9]{8})$/.test(telefone))
+                    erro = "Informe DDD e telefone válido: 10 dígitos para fixo ou 11 para celular.";
+            }
+            else if (id == "cepCadastro" && !/^\d{5}-?\d{3}$/.test(valor))
+                erro = "Informe os 8 dígitos do CEP.";
+            else if (id == "nascimentoCadastro")
+            {
+                var nascimento = new Date(valor + "T12:00:00");
+                var hoje = new Date();
+                var limite = new Date(hoje.getFullYear() - 120, hoje.getMonth(), hoje.getDate());
+                if (isNaN(nascimento.getTime()) || dataLocal(nascimento) != valor || valor >= dataLocal(hoje) || nascimento < limite)
+                    erro = "Informe uma data de nascimento anterior a hoje, nos últimos 120 anos.";
+            }
+            else if (id == "nomeCadastro" || id == "nomeSocialCadastro" || id == "nomeContato")
+            {
+                if (valor.length < 2 || !/^[\p{L}\p{M} .’'\-]+$/u.test(valor) || !/\p{L}/u.test(valor))
+                    erro = "Informe um nome com pelo menos 2 caracteres, usando letras. Acentos são permitidos.";
+            }
+            else if (id == "senhaCadastro" || id == "senhaLogin")
+            {
+                if (campo.value.length < 6)
+                    erro = "A senha deve ter pelo menos 6 caracteres.";
+            }
+            else if (id == "confirmaSenhaCadastro" && campo.value != document.getElementById("senhaCadastro").value)
+                erro = "As senhas não coincidem.";
+            else if (campo.type == "number")
+            {
+                var numero = Number(valor);
+                if (!Number.isInteger(numero) || numero < Number(campo.min) || numero > Number(campo.max))
+                    erro = "Informe um número inteiro entre " + campo.min + " e " + campo.max + ".";
+            }
+            else if (id == "registroVoluntario")
+            {
+                var area = document.getElementById("areaVoluntario").value;
+                if (area == "Psiquiatria" && !/^[0-9]{1,7}\s*\/\s*[A-Za-z]{2}$/.test(valor))
+                    erro = "Informe o CRM e a UF no formato 123456/SP.";
+                else if (area == "Psiquiatria" && document.getElementById("estadoCadastro").querySelector('option[value="' + valor.slice(-2).toUpperCase() + '"]') == null)
+                    erro = "Informe uma UF válida para o CRM.";
+                else if (area == "Psicologia" && !/^[0-9]{2}\/[0-9]{4,7}$/.test(valor))
+                    erro = "Informe o CRP no formato 06/123456.";
+                else if (area == "Terapia ocupacional" && !/^[0-9]{1,2}\/[0-9]{1,7}-?TO$/i.test(valor))
+                    erro = "Informe o CREFITO no formato 3/12345-TO.";
+            }
+            if (erro == "" && campo.minLength > 0 && valor.length < campo.minLength)
+                erro = "Preencha com pelo menos " + campo.minLength + " caracteres.";
+            if (erro == "" && campo.maxLength > 0 && campo.value.length > campo.maxLength)
+                erro = "Use no máximo " + campo.maxLength + " caracteres.";
+        }
+    }
+    return erro;
+}
+
+function validarCampo(campo)
+{
+    var erro = mensagemCampo(campo);
+    campo.setCustomValidity(erro);
+    campo.classList.toggle("is-invalid", erro != "");
+    campo.setAttribute("aria-invalid", String(erro != ""));
+    document.getElementById("erro-" + campo.id).textContent = erro;
+    return erro == "";
+}
+
+function validarFormulario(id, idMensagem)
+{
+    var campos = document.querySelectorAll("#" + id + " input, #" + id + " select, #" + id + " textarea");
+    var valido = true;
+    var primeiro = null;
+    for (var i = 0; i < campos.length; i++)
+    {
+        if (!validarCampo(campos[i]))
+        {
+            valido = false;
+            if (primeiro == null)
+                primeiro = campos[i];
+        }
+    }
+    var mensagem = document.getElementById(idMensagem);
+    mensagem.textContent = valido ? "" : "Confira os campos destacados antes de continuar.";
+    mensagem.style.display = valido ? "none" : "block";
+    if (primeiro != null)
+        primeiro.focus();
+    return valido;
+}
+
+function limparValidacao(id)
+{
+    var campos = document.querySelectorAll("#" + id + " input, #" + id + " select, #" + id + " textarea");
+    for (var i = 0; i < campos.length; i++)
+    {
+        campos[i].setCustomValidity("");
+        campos[i].classList.remove("is-invalid");
+        campos[i].removeAttribute("aria-invalid");
+        document.getElementById("erro-" + campos[i].id).textContent = "";
+    }
+}
+
+function prepararValidacoes()
+{
+    var formularios = ["formCadastro", "formLogin", "formContato"];
+    for (var i = 0; i < formularios.length; i++)
+    {
+        var formulario = document.getElementById(formularios[i]);
+        if (formulario != null)
+        {
+            var mensagens = formulario.querySelectorAll(".invalid-feedback");
+            for (var j = 0; j < mensagens.length; j++)
+                mensagens[j].remove();
+            var campos = formulario.querySelectorAll("input, select, textarea");
+            for (var k = 0; k < campos.length; k++)
+            {
+                var mensagem = document.createElement("div");
+                mensagem.id = "erro-" + campos[k].id;
+                mensagem.className = "invalid-feedback";
+                campos[k].insertAdjacentElement("afterend", mensagem);
+                var ajuda = campos[k].getAttribute("aria-describedby") || "";
+                campos[k].setAttribute("aria-describedby", (ajuda + " " + mensagem.id).trim());
+                campos[k].addEventListener("blur", function() { validarCampo(this); });
+                campos[k].addEventListener("input", function() {
+                    if (this.classList.contains("is-invalid"))
+                        validarCampo(this);
+                });
+                campos[k].addEventListener("change", function() { validarCampo(this); });
+            }
         }
     }
 }
+
+document.addEventListener("DOMContentLoaded", prepararValidacoes);
 
 function realizarAgendamento(event)
 {
@@ -375,7 +451,10 @@ function realizarAgendamento(event)
         var comprovante = document.getElementById("areaComprovante");
         comprovante.className = "alert alert-success";
         comprovante.textContent = "Agendamento confirmado com " + profissionalSelecionado.nome + ": " + data + ", às " + horario + ".";
-        document.getElementById("formAgendamento").hidden = true;
+        agendamentos.push({id: proximoAgendamento, profissionalId: profissionalSelecionado.id, nome: profissionalSelecionado.nome, data: document.getElementById("dataAgendamento").value, horario: horario});
+        proximoAgendamento++;
+        mostrarAgendamentos();
+        atualizarHorariosConsulta();
     }
 }
 
@@ -413,6 +492,7 @@ function carregarProfissional()
         document.getElementById("escolhaProfissional").value = profissional.nome;
         profissionalSelecionado = profissional;
         carregarDatasConsulta();
+        mostrarAgendamentos();
     }
 }
 
@@ -496,6 +576,9 @@ function alternarCamposCadastro()
         rotulo.textContent = rotulo.getAttribute("data-rotulo") + (campo.required ? " *" : " (opcional)");
     }
     document.getElementById("nomeSocialCadastro").required = true;
+    var perguntas = document.querySelectorAll(".ajuda-cadastro-paciente");
+    for (var j = 0; j < perguntas.length; j++)
+        perguntas[j].hidden = tipo != "paciente";
     atualizarRegistroProfissional();
     var dadosPaciente = document.getElementById("dadosPaciente");
     var dadosVoluntario = document.getElementById("dadosVoluntario");
@@ -504,6 +587,7 @@ function alternarCamposCadastro()
     dadosPaciente.disabled = tipo != "paciente";
     dadosVoluntario.hidden = tipo != "voluntario";
     dadosVoluntario.disabled = tipo != "voluntario";
+    limparValidacao("formCadastro");
 }
 
 function atualizarRegistroProfissional()
@@ -547,11 +631,11 @@ function atualizarHorariosConsulta()
     campo.add(new Option("Escolha um horário...", ""));
     var hoje = new Date();
     var dia = new Date(data + "T12:00:00");
-    var dataValida = !isNaN(dia.getTime()) && data >= dataLocal(hoje) && profissionalSelecionado.diasSemana.indexOf(dia.getDay()) != -1;
+    var dataValida = !isNaN(dia.getTime()) && dataLocal(dia) == data && data >= dataLocal(hoje) && profissionalSelecionado.diasSemana.indexOf(dia.getDay()) != -1;
     for (var i = 0; i < profissionalSelecionado.horarios.length; i++)
     {
         var horario = profissionalSelecionado.horarios[i];
-        if (dataValida && new Date(data + "T" + horario) > hoje)
+        if (dataValida && new Date(data + "T" + horario) > hoje && !agendamentoExiste(profissionalSelecionado.id, data, horario))
             campo.add(new Option(horario, horario));
     }
     var temHorario = campo.options.length > 1;
@@ -572,8 +656,8 @@ function validarDataConsulta()
     var campoHora = document.getElementById("horarioAgendamento");
     var data = new Date(campoData.value + "T12:00:00");
     var agora = new Date();
-    var dataValida = !isNaN(data.getTime()) && campoData.value >= dataLocal(agora) && profissionalSelecionado.diasSemana.indexOf(data.getDay()) != -1;
-    var horaValida = profissionalSelecionado.horarios.indexOf(campoHora.value) != -1 && new Date(campoData.value + "T" + campoHora.value) > agora;
+    var dataValida = !isNaN(data.getTime()) && dataLocal(data) == campoData.value && campoData.value >= dataLocal(agora) && profissionalSelecionado.diasSemana.indexOf(data.getDay()) != -1;
+    var horaValida = profissionalSelecionado.horarios.indexOf(campoHora.value) != -1 && new Date(campoData.value + "T" + campoHora.value) > agora && !agendamentoExiste(profissionalSelecionado.id, campoData.value, campoHora.value);
     campoData.classList.toggle("is-invalid", !dataValida);
     campoHora.classList.toggle("is-invalid", !horaValida);
     var erro = "";
@@ -583,4 +667,126 @@ function validarDataConsulta()
         erro = "Escolha um horário disponível e futuro.";
     document.getElementById("erroAgendamento").textContent = erro;
     return dataValida && horaValida;
+}
+
+function abrirPerguntaFaq()
+{
+    var destino = document.getElementById(window.location.hash.substring(1));
+    if (destino != null && destino.classList.contains("accordion-item"))
+    {
+        var resposta = destino.querySelector(".accordion-collapse");
+        var pergunta = destino.querySelector(".accordion-button");
+        var perguntas = document.querySelectorAll(".faq-cadastro.accordion-item");
+        for (var i = 0; i < perguntas.length; i++)
+        {
+            perguntas[i].querySelector(".accordion-collapse").classList.remove("show");
+            perguntas[i].querySelector(".accordion-button").classList.add("collapsed");
+            perguntas[i].querySelector(".accordion-button").setAttribute("aria-expanded", "false");
+        }
+        resposta.classList.add("show");
+        pergunta.classList.remove("collapsed");
+        pergunta.setAttribute("aria-expanded", "true");
+        destino.scrollIntoView({block: "start"});
+    }
+}
+
+document.addEventListener("DOMContentLoaded", abrirPerguntaFaq);
+window.addEventListener("hashchange", abrirPerguntaFaq);
+
+// Dados iniciais em memória: ao recarregar a página, o vetor volta a estes exemplos.
+var agendamentos = [
+    {id: 1, profissionalId: "ana", nome: "Dra. Ana Souza", data: "2026-11-23", horario: "09:00"},
+    {id: 2, profissionalId: "lucas", nome: "Lucas Mendes", data: "2026-11-24", horario: "14:00"},
+    {id: 3, profissionalId: "grupo", nome: "Grupo Florescer", data: "2026-11-28", horario: "10:00"}
+];
+var proximoAgendamento = 4;
+
+function agendamentoExiste(profissionalId, data, horario)
+{
+    var existe = false;
+    for (var i = 0; i < agendamentos.length; i++)
+    {
+        if (agendamentos[i].profissionalId == profissionalId && agendamentos[i].data == data && agendamentos[i].horario == horario)
+            existe = true;
+    }
+    return existe;
+}
+
+function mostrarAgendamentos()
+{
+    var corpo = document.getElementById("corpoAgendamentos");
+    corpo.textContent = "";
+    for (var i = 0; i < agendamentos.length; i++)
+    {
+        var item = agendamentos[i];
+        var linha = document.createElement("tr");
+        var selecao = document.createElement("td");
+        var checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.className = "form-check-input selecionar-agendamento";
+        checkbox.value = item.id;
+        checkbox.setAttribute("aria-label", "Selecionar agendamento com " + item.nome + " em " + item.data + " às " + item.horario);
+        checkbox.addEventListener("change", atualizarSelecaoAgendamentos);
+        selecao.appendChild(checkbox);
+        linha.appendChild(selecao);
+        var partes = item.data.split("-");
+        var valores = [item.nome, partes[2] + "/" + partes[1] + "/" + partes[0], item.horario];
+        for (var j = 0; j < valores.length; j++)
+        {
+            var celula = document.createElement("td");
+            celula.textContent = valores[j];
+            linha.appendChild(celula);
+        }
+        corpo.appendChild(linha);
+    }
+    document.getElementById("semAgendamentos").hidden = agendamentos.length != 0;
+    document.getElementById("selecionarTodos").disabled = agendamentos.length == 0;
+    atualizarSelecaoAgendamentos();
+}
+
+function atualizarSelecaoAgendamentos()
+{
+    var marcados = document.querySelectorAll(".selecionar-agendamento:checked").length;
+    var total = document.querySelectorAll(".selecionar-agendamento").length;
+    document.getElementById("selecionarTodos").checked = total > 0 && marcados == total;
+    document.getElementById("selecionarTodos").indeterminate = marcados > 0 && marcados < total;
+    document.getElementById("resumoSelecao").textContent = marcados + " de " + total + " agendamentos selecionados.";
+}
+
+function selecionarAgendamentos()
+{
+    var marcado = document.getElementById("selecionarTodos").checked;
+    var caixas = document.querySelectorAll(".selecionar-agendamento");
+    for (var i = 0; i < caixas.length; i++)
+        caixas[i].checked = marcado;
+    atualizarSelecaoAgendamentos();
+}
+
+function excluirAgendamentos()
+{
+    var caixas = document.querySelectorAll(".selecionar-agendamento:checked");
+    var quantidade = caixas.length;
+    // Percorrer de trás para frente evita pular itens depois do splice.
+    for (var i = agendamentos.length - 1; i >= 0; i--)
+    {
+        var excluir = false;
+        for (var j = 0; j < caixas.length; j++)
+        {
+            if (agendamentos[i].id == Number(caixas[j].value))
+                excluir = true;
+        }
+        if (excluir)
+            agendamentos.splice(i, 1);
+    }
+    var mensagem = document.getElementById("mensagemTabela");
+    if (quantidade == 0)
+        mensagem.textContent = "Selecione pelo menos um agendamento para cancelar.";
+    else
+    {
+        mensagem.textContent = quantidade + " agendamento(s) cancelado(s).";
+        document.getElementById("areaComprovante").textContent = "";
+        document.getElementById("areaComprovante").className = "";
+        mostrarAgendamentos();
+        atualizarHorariosConsulta();
+    }
 }

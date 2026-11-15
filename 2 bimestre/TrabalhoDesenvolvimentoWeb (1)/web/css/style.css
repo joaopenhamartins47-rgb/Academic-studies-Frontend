@@ -442,3 +442,22 @@ footer a:hover {
 .group-photo {
     border-radius: 10px;
 }
+
+.faq-cadastro {
+    scroll-margin-top: 110px;
+}
+
+.ajuda-cadastro-paciente a {
+    color: #145c48;
+    text-decoration: underline;
+}
+
+/* Estrutura adaptada do exemplo Checkout do Bootstrap. */
+.cadastro-checkout > .container {
+    max-width: 1140px;
+}
+
+.cadastro-checkout .list-group-item {
+    border-color: #e5ece8;
+    background-color: #fff;
+}

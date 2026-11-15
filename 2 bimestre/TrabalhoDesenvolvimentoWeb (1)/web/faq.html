@@ -44,48 +44,110 @@
                 <h1>Perguntas Frequentes</h1>
                 <p>Encontre respostas para dúvidas comuns.</p>
             </div>
-            <div class="accordion fade-up" id="faq">
-                <div class="accordion-item">
+            <nav class="d-flex flex-wrap gap-2 mb-5" aria-label="Tópicos das perguntas frequentes">
+                <a href="#topico-plataforma" class="btn btn-sm btn-outline-success">Sobre a Rede de Apoio</a>
+                <a href="#topico-dados-pessoais" class="btn btn-sm btn-outline-success">Dados pessoais</a>
+                <a href="#topico-voluntariado" class="btn btn-sm btn-outline-success">Voluntariado</a>
+                <a href="#topico-privacidade" class="btn btn-sm btn-outline-success">Privacidade</a>
+                <a href="#topico-emergencias" class="btn btn-sm btn-outline-success">Emergências</a>
+            </nav>
+            <section id="topico-plataforma" class="faq-cadastro mb-5" aria-labelledby="titulo-plataforma">
+                <h2 id="titulo-plataforma" class="h4 mb-3">Sobre a Rede de Apoio</h2>
+                <div class="accordion" id="faq-plataforma">
+<div class="accordion-item">
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#a1">Como funciona a plataforma?</button>
                     </h2>
-                    <div id="a1" class="accordion-collapse collapse" data-bs-parent="#faq">
+                    <div id="a1" class="accordion-collapse collapse" data-bs-parent="#faq-plataforma">
                         <div class="accordion-body">A plataforma apresenta profissionais, terapeutas e grupos de apoio, permitindo que o usuário conheça as opções e escolha uma forma de buscar suporte.</div>
                     </div>
                 </div>
-                <div class="accordion-item">
+<div class="accordion-item">
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#a2">Os atendimentos são gratuitos?</button>
                     </h2>
-                    <div id="a2" class="accordion-collapse collapse" data-bs-parent="#faq">
-                        <div class="accordion-body">O projeto é pensado para conectar usuários a iniciativas voluntárias. A disponibilidade e as condições de cada atendimento devem ser verificadas com o responsável.</div>
+                    <div id="a2" class="accordion-collapse collapse" data-bs-parent="#faq-plataforma">
+                        <div class="accordion-body">A Rede de Apoio reúne profissionais e grupos que oferecem apoio voluntário. Confira a disponibilidade e as condições do atendimento com o responsável antes de agendar.</div>
                     </div>
                 </div>
-                <div class="accordion-item">
+                </div>
+            </section>
+            <section id="topico-dados-pessoais" class="faq-cadastro mb-5" aria-labelledby="titulo-dados-pessoais">
+                <h2 id="titulo-dados-pessoais" class="h4 mb-3">Dados pessoais</h2>
+                <div class="accordion" id="faq-dados-pessoais">
+<div class="accordion-item faq-cadastro" id="cadastro-nome-preferido">
+                    <h2 class="accordion-header">
+                        <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#resposta-nome-preferido" aria-expanded="false" aria-controls="resposta-nome-preferido">Por que preciso informar como prefiro ser chamado(a)?</button>
+                    </h2>
+                    <div id="resposta-nome-preferido" class="accordion-collapse collapse" data-bs-parent="#faq-dados-pessoais">
+                        <div class="accordion-body">Esse é o nome que você deseja usar nas conversas com a rede e durante o acolhimento. Pode ser seu primeiro nome, nome social ou outra forma pela qual se sinta confortável em ser chamado(a). Para quem busca apoio, o nome completo é opcional.</div>
+                    </div>
+                </div>
+<div class="accordion-item faq-cadastro" id="cadastro-nascimento">
+                    <h2 class="accordion-header">
+                        <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#resposta-nascimento" aria-expanded="false" aria-controls="resposta-nascimento">Por que preciso informar minha data de nascimento?</button>
+                    </h2>
+                    <div id="resposta-nascimento" class="accordion-collapse collapse" data-bs-parent="#faq-dados-pessoais">
+                        <div class="accordion-body">A idade ajuda a identificar opções de atendimento adequadas à sua faixa etária, pois os profissionais e grupos atendem públicos diferentes.</div>
+                    </div>
+                </div>
+<div class="accordion-item faq-cadastro" id="cadastro-email">
+                    <h2 class="accordion-header">
+                        <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#resposta-email" aria-expanded="false" aria-controls="resposta-email">Por que preciso informar meu e-mail?</button>
+                    </h2>
+                    <div id="resposta-email" class="accordion-collapse collapse" data-bs-parent="#faq-dados-pessoais">
+                        <div class="accordion-body">O e-mail é usado no acesso à conta e como opção de contato sobre o cadastro e os atendimentos solicitados. Informe um endereço ao qual você tenha acesso.</div>
+                    </div>
+                </div>
+<div class="accordion-item faq-cadastro" id="cadastro-telefone">
+                    <h2 class="accordion-header">
+                        <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#resposta-telefone" aria-expanded="false" aria-controls="resposta-telefone">Por que preciso informar meu telefone?</button>
+                    </h2>
+                    <div id="resposta-telefone" class="accordion-collapse collapse" data-bs-parent="#faq-dados-pessoais">
+                        <div class="accordion-body">O telefone oferece uma alternativa de contato para combinar detalhes ou avisar sobre mudanças no atendimento solicitado. O campo de preferência de contato permite indicar se você prefere receber esse contato por telefone ou e-mail.</div>
+                    </div>
+                </div>
+                </div>
+            </section>
+            <section id="topico-voluntariado" class="faq-cadastro mb-5" aria-labelledby="titulo-voluntariado">
+                <h2 id="titulo-voluntariado" class="h4 mb-3">Voluntariado</h2>
+                <div class="accordion" id="faq-voluntariado">
+<div class="accordion-item">
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#a3">Como faço para me cadastrar como voluntário?</button>
                     </h2>
-                    <div id="a3" class="accordion-collapse collapse" data-bs-parent="#faq">
-                        <div class="accordion-body">Clique em Cadastrar e escolha a opção de voluntário. No projeto completo, os dados seriam analisados antes da publicação do perfil.</div>
+                    <div id="a3" class="accordion-collapse collapse" data-bs-parent="#faq-voluntariado">
+                        <div class="accordion-body">Clique em Cadastrar e escolha Quero ser voluntário. Preencha seus dados pessoais, formação, área de atuação e disponibilidade. Para profissões regulamentadas, informe também o registro do conselho correspondente: CRM, CRP ou CREFITO.</div>
                     </div>
                 </div>
-                <div class="accordion-item">
+                </div>
+            </section>
+            <section id="topico-privacidade" class="faq-cadastro mb-5" aria-labelledby="titulo-privacidade">
+                <h2 id="titulo-privacidade" class="h4 mb-3">Privacidade</h2>
+                <div class="accordion" id="faq-privacidade">
+<div class="accordion-item">
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#a4">O site garante o anonimato dos usuários?</button>
                     </h2>
-                    <div id="a4" class="accordion-collapse collapse" data-bs-parent="#faq">
-                        <div class="accordion-body">O layout foi projetado pensando em privacidade, mas uma implementação real precisaria de políticas, controles de acesso e medidas de segurança adequadas.</div>
+                    <div id="a4" class="accordion-collapse collapse" data-bs-parent="#faq-privacidade">
+                        <div class="accordion-body">Você pode informar como prefere ser chamado(a). Para quem busca apoio, nome completo, CPF, CEP, cidade e estado são opcionais. Isso não significa anonimato completo: o cadastro solicita e-mail, telefone e data de nascimento. Ao escrever sobre sua situação, compartilhe apenas o que se sentir confortável em contar.</div>
                     </div>
                 </div>
-                <div class="accordion-item">
+                </div>
+            </section>
+            <section id="topico-emergencias" class="faq-cadastro mb-5" aria-labelledby="titulo-emergencias">
+                <h2 id="titulo-emergencias" class="h4 mb-3">Emergências</h2>
+                <div class="accordion" id="faq-emergencias">
+<div class="accordion-item">
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#a5">Há atendimento para emergências psicológicas?</button>
                     </h2>
-                    <div id="a5" class="accordion-collapse collapse" data-bs-parent="#faq">
+                    <div id="a5" class="accordion-collapse collapse" data-bs-parent="#faq-emergencias">
                         <div class="accordion-body">A plataforma não substitui serviços de emergência. Em uma situação de crise ou risco imediato, procure um serviço de emergência ou ligue para o SAMU (192). O CVV atende pelo 188.</div>
                     </div>
                 </div>
-            </div>
+                </div>
+            </section>
             <div class="card text-center mt-5 p-4 shadow-sm fade-up">
                 <h4>Ainda tem dúvidas?</h4>
                 <p class="text-muted mb-4">Se você não encontrou a resposta que procurava, nossa equipe está pronta para ajudar.</p>

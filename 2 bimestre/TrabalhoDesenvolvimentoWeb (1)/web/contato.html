@@ -51,11 +51,11 @@
             <div class="row g-4 justify-content-center">
                 <div class="col-lg-7">
                     <div class="card p-4 fade-left">
-                        <form novalidate onsubmit="validarContato(event)">
+                        <form id="formContato" novalidate onsubmit="validarContato(event)">
                             <div class="row">
                                 <div class="col-md-6 mb-3">
-                                    <label class="form-label">Nome</label>
-                                    <input id="nomeContato" class="form-control" placeholder="Seu nome (opcional)">
+                                    <label for="nomeContato" class="form-label">Nome</label>
+                                    <input minlength="2" maxlength="100" id="nomeContato" class="form-control" placeholder="Seu nome (opcional)">
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="emailContato" class="form-label">E-mail *</label>
@@ -63,12 +63,16 @@
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Assunto</label>
-                                <input id="assuntoContato" class="form-control" placeholder="Assunto da mensagem" required>
+                                <label for="telefoneContato" class="form-label">Telefone com DDD (opcional)</label>
+                                <input type="tel" id="telefoneContato" class="form-control" maxlength="15" placeholder="(00) 00000-0000">
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Mensagem</label>
-                                <textarea id="mensagemContato" class="form-control" rows="6" placeholder="Escreva sua mensagem aqui..." required></textarea>
+                                <label for="assuntoContato" class="form-label">Assunto *</label>
+                                <input minlength="5" maxlength="120" id="assuntoContato" class="form-control" placeholder="Assunto da mensagem" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="mensagemContato" class="form-label">Mensagem *</label>
+                                <textarea minlength="20" maxlength="2000" id="mensagemContato" class="form-control" rows="6" placeholder="Escreva sua mensagem aqui..." required></textarea>
                             </div>
                             <div id="erroContato" class="text-danger small mb-3 fw-bold" style="display: none;"></div> 
                             <button class="btn btn-success">Enviar mensagem</button>
