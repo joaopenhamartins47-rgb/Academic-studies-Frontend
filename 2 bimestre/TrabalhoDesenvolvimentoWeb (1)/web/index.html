@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rede de Apoio | Saúde Mental</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/funcoes.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">
+            <span class="logo">♡</span> Rede de Apoio
+            <small>Saúde Mental</small>
+        </a>
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+                <li><a class="nav-link active" href="index.html">Início</a></li>
+                <li><a class="nav-link" href="sobre.html">Sobre</a></li>
+                <li><a class="nav-link" href="voluntarios.html">Voluntários</a></li>
+                <li><a class="nav-link" href="artigos.html">Artigos</a></li>
+                <li><a class="nav-link" href="faq.html">FAQ</a></li>
+                <li><a class="nav-link" href="contato.html">Contato</a></li>
+                <li><a class="btn btn-outline-success ms-lg-2" href="login.html">Entrar</a></li>
+                <li><a class="btn btn-success ms-lg-2" href="cadastro.html">Cadastrar</a></li>
+            </ul>
+            <div class="d-flex align-items-center gap-2 ms-lg-3 mt-3 mt-lg-0 border-start ps-lg-3 border-secondary-subtle">
+                <button onclick="aumentarFonte()" class="btn btn-sm btn-outline-secondary" title="Aumentar Fonte">A+</button>
+                <button onclick="diminuirFonte()" class="btn btn-sm btn-outline-secondary" title="Diminuir Fonte">A-</button>
+                <button onclick="saidaRapida()" class="btn btn-sm btn-danger fw-bold">Sair Rápido (ESC)</button>
+            </div>
+        </div>
+    </div>
+</nav>
+<header class="hero">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 fade-left">
+                <span class="tag">APOIO PARA VOCÊ</span>
+                <h1>
+                    Você não precisa passar por tudo <span>sozinho.</span>
+                </h1>
+                <p class="lead">
+                    A Rede de Apoio conecta pessoas que precisam de acolhimento a profissionais e grupos de apoio disponíveis para ajudar.
+                </p>
+                <a href="voluntarios.html" class="btn btn-success btn-lg me-2">Preciso de ajuda</a>
+                <a href="login.html" class="btn btn-outline-success btn-lg">Quero ser voluntário</a>
+            </div>
+            <div class="col-lg-6 text-center mt-5 mt-lg-0 fade-right">
+                <div class="hero-card">
+                    <div class="heart">♡</div>
+                    <div class="person person-1"></div>
+                    <div class="person person-2"></div>
+                    <div class="plant">❧</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<section class="benefits py-4">
+    <div class="container">
+        <div class="row text-center g-4 fade-in">
+            <div class="col-md-3">
+                <strong>♡</strong><p>Apoio gratuito<br><small>e voluntário</small></p>
+            </div>
+            <div class="col-md-3">
+                <strong>♧</strong><p>Profissionais<br><small>qualificados</small></p>
+            </div>
+            <div class="col-md-3">
+                <strong>✓</strong><p>Ambiente seguro<br><small>e acolhedor</small></p>
+            </div>
+            <div class="col-md-3">
+                <strong>☼</strong><p>Respeito e<br><small>anonimato</small></p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="py-5">
+    <div class="container text-center">
+        <span class="tag fade-in">COMO FUNCIONA</span>
+        <h2 class="section-title fade-bottom">Encontre o apoio que você precisa</h2>
+        <div class="row g-4 mt-3 fade-up">
+            <div class="col-md-4">
+                <div class="card support-card h-100">
+                    <a href="cadastro.html" class="card-body">
+                        <div class="number">1</div>
+                        <h4>Crie sua conta</h4>
+                        <p>Cadastre-se gratuitamente como usuário ou voluntário.</p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card support-card h-100">
+                    <a href="voluntarios.html" class="card-body">
+                        <div class="number">2</div>
+                        <h4>Encontre apoio</h4>
+                        <p>Pesquise profissionais e grupos de apoio de acordo com suas necessidades.</p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card support-card h-100">
+                    <a href="contato.html" class="card-body">
+                        <div class="number">3</div>
+                        <h4>Dúvidas?</h4>
+                        <p>Tem dúvidas ou precisa de ajuda com a plataforma? Nossa equipe está aqui</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="callout py-5">
+    <div class="container text-center">
+        <h2>Se precisar conversar, estamos aqui.</h2>
+        <p>Buscar ajuda é um ato de coragem.</p>
+        <a href="voluntarios.html" class="btn btn-light">Buscar apoio agora</a>
+    </div>
+</section>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <h5>♡ Rede de Apoio</h5>
+                <p>Conectando pessoas a apoio emocional de forma gratuita, segura e acolhedora.</p>
+            </div>
+            <div class="col-md-3">
+                <h5>Navegação</h5>
+                <a href="sobre.html">Sobre</a>
+                <a href="voluntarios.html">Voluntários</a>
+                <a href="artigos.html">Artigos</a>
+                <a href="faq.html">FAQ</a>
+            </div>
+            <div class="col-md-4">
+                <h5>Ajuda imediata</h5>
+                <p>CVV — <strong>188</strong></p>
+                <p>SAMU — <strong>192</strong></p>
+                <p>Em caso de urgência crítica, dirija-se imediatamente ao pronto-socorro mais próximo.</p>
+            </div>
+        </div>
+        <hr>
+        <p class="text-center mb-0">© 2026 Rede de Apoio — Projeto acadêmico.</p>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

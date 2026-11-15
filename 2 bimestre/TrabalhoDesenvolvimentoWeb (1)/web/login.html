@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar | Rede de Apoio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/funcoes.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <span class="logo">♡</span> Rede de Apoio <small>Saúde Mental</small>
+            </a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li><a class="nav-link" href="index.html">Início</a></li>
+                    <li><a class="nav-link" href="sobre.html">Sobre</a></li>
+                    <li><a class="nav-link" href="voluntarios.html">Voluntários</a></li>
+                    <li><a class="nav-link" href="artigos.html">Artigos</a></li>
+                    <li><a class="nav-link" href="faq.html">FAQ</a></li>
+                    <li><a class="nav-link" href="contato.html">Contato</a></li>
+                    <li><a class="btn btn-outline-success ms-lg-2 active" href="login.html">Entrar</a></li>
+                    <li><a class="btn btn-success ms-lg-2" href="cadastro.html">Cadastrar</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-2 ms-lg-3 mt-3 mt-lg-0 border-start ps-lg-3 border-secondary-subtle">
+                    <button type="button" onclick="aumentarFonte()" class="btn btn-sm btn-outline-secondary" title="Aumentar Fonte">A+</button>
+                    <button type="button" onclick="diminuirFonte()" class="btn btn-sm btn-outline-secondary" title="Diminuir Fonte">A-</button>
+                    <button type="button" onclick="saidaRapida()" class="btn btn-sm btn-danger fw-bold">Sair Rápido (ESC)</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main class="page">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-9">
+                    <div class="card login-card shadow-sm fade-up">
+                        <div class="row g-0">
+                            <div class="col-md-6 p-4 p-lg-5 border-end">
+                                <h2>Entrar</h2>
+                                <p class="text-muted">Que bom ter você de volta!</p>
+                                <form novalidate onsubmit="validarLogin(event)">
+                                    <label for="emailLogin" class="form-label">E-mail</label>
+                                    <input type="email" id="emailLogin" class="form-control mb-3" placeholder="seu@email.com" required>
+                                    <label for="senhaLogin" class="form-label">Senha</label>
+                                    <input type="password" id="senhaLogin" class="form-control mb-2" placeholder="Sua senha" required>                 
+                                    <div id="erroLogin" class="text-danger small mt-2 fw-bold" style="display: none;"></div>
+                                    <a href="#" class="small">Esqueci minha senha</a>    
+                                    <button type="submit" class="btn btn-success w-100 mt-4">Entrar</button>
+                                </form>
+                            </div>
+                            <div class="col-md-6 p-4 p-lg-5">
+                                <h2>Criar conta</h2>
+                                <p class="text-muted">Escolha como deseja participar.</p>
+                                <a href="cadastro.html?tipo=paciente" class="account-option">
+                                    <strong>♙ Sou usuário</strong>
+                                    <small>Quero buscar apoio emocional</small>
+                                </a>
+                                <a href="cadastro.html?tipo=voluntario" class="account-option">
+                                    <strong>♡ Sou voluntário</strong>
+                                    <small>Quero oferecer meu apoio</small>
+                                </a>
+                                <p class="small text-muted mt-4">Ao criar uma conta, você concorda com os termos de uso e política de privacidade.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

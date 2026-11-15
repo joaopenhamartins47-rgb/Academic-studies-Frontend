@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | Rede de Apoio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/funcoes.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <span class="logo">♡</span> Rede de Apoio
+                <small>Saúde Mental</small>
+            </a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li><a class="nav-link" href="index.html">Início</a></li>
+                    <li><a class="nav-link" href="sobre.html">Sobre</a></li>
+                    <li><a class="nav-link" href="voluntarios.html">Voluntários</a></li>
+                    <li><a class="nav-link" href="artigos.html">Artigos</a></li>
+                    <li><a class="nav-link active" href="faq.html">FAQ</a></li>
+                    <li><a class="nav-link" href="contato.html">Contato</a></li>
+                    <li><a class="btn btn-outline-success ms-lg-2" href="login.html">Entrar</a></li>
+                    <li><a class="btn btn-success ms-lg-2" href="cadastro.html">Cadastrar</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-2 ms-lg-3 mt-3 mt-lg-0 border-start ps-lg-3 border-secondary-subtle">
+                    <button onclick="aumentarFonte()" class="btn btn-sm btn-outline-secondary" title="Aumentar Fonte">A+</button>
+                    <button onclick="diminuirFonte()" class="btn btn-sm btn-outline-secondary" title="Diminuir Fonte">A-</button>
+                    <button onclick="saidaRapida()" class="btn btn-sm btn-danger fw-bold">Sair Rápido (ESC)</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main class="page">
+        <div class="container col-lg-9">
+            <div class="text-center mb-5 fade-bottom">
+                <span class="tag">DÚVIDAS</span>
+                <h1>Perguntas Frequentes</h1>
+                <p>Encontre respostas para dúvidas comuns.</p>
+            </div>
+            <div class="accordion fade-up" id="faq">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#a1">Como funciona a plataforma?</button>
+                    </h2>
+                    <div id="a1" class="accordion-collapse collapse" data-bs-parent="#faq">
+                        <div class="accordion-body">A plataforma apresenta profissionais, terapeutas e grupos de apoio, permitindo que o usuário conheça as opções e escolha uma forma de buscar suporte.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#a2">Os atendimentos são gratuitos?</button>
+                    </h2>
+                    <div id="a2" class="accordion-collapse collapse" data-bs-parent="#faq">
+                        <div class="accordion-body">O projeto é pensado para conectar usuários a iniciativas voluntárias. A disponibilidade e as condições de cada atendimento devem ser verificadas com o responsável.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#a3">Como faço para me cadastrar como voluntário?</button>
+                    </h2>
+                    <div id="a3" class="accordion-collapse collapse" data-bs-parent="#faq">
+                        <div class="accordion-body">Clique em Cadastrar e escolha a opção de voluntário. No projeto completo, os dados seriam analisados antes da publicação do perfil.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#a4">O site garante o anonimato dos usuários?</button>
+                    </h2>
+                    <div id="a4" class="accordion-collapse collapse" data-bs-parent="#faq">
+                        <div class="accordion-body">O layout foi projetado pensando em privacidade, mas uma implementação real precisaria de políticas, controles de acesso e medidas de segurança adequadas.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#a5">Há atendimento para emergências psicológicas?</button>
+                    </h2>
+                    <div id="a5" class="accordion-collapse collapse" data-bs-parent="#faq">
+                        <div class="accordion-body">A plataforma não substitui serviços de emergência. Em uma situação de crise ou risco imediato, procure um serviço de emergência ou ligue para o SAMU (192). O CVV atende pelo 188.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card text-center mt-5 p-4 shadow-sm fade-up">
+                <h4>Ainda tem dúvidas?</h4>
+                <p class="text-muted mb-4">Se você não encontrou a resposta que procurava, nossa equipe está pronta para ajudar.</p>
+                <div>
+                    <a href="contato.html" class="btn btn-success">Fale Conosco</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="alt-footer">
+        <div class="container text-center">
+            <p class="mb-0">© 2026 Rede de Apoio — Projeto acadêmico.</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
