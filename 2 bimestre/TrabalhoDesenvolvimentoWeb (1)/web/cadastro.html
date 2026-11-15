@@ -16,8 +16,11 @@
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.html">
-                <span class="logo">♡</span> Rede de Apoio <small>Saúde Mental</small>
+                Rede de Apoio <small>Saúde Mental</small>
             </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Abrir menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="navbar-nav ms-auto align-items-lg-center">
                     <li><a class="nav-link" href="index.html">Início</a></li>
@@ -40,24 +43,244 @@
     <main class="page">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-6">
+                <div class="col-lg-10 col-xl-9">
                     <div class="card login-card shadow-sm p-4 p-lg-5 fade-up">
                         <h2 class="text-center mb-4">Crie sua conta</h2>
-                        <form novalidate onsubmit="validarCadastro(event)">
-                            <label class="form-label">E-mail</label>
-                            <input type="email" id="emailCadastro" class="form-control mb-3" placeholder="seu@email.com">
-                            <label class="form-label">Tipo de Conta</label>
-                            <select id="tipoUsuario" class="form-select mb-3">
+                        <form id="formCadastro" novalidate onsubmit="validarCadastro(event)">
+                            <p class="text-muted">Os campos com * são obrigatórios. Escolha como deseja participar para preencher os dados do seu perfil.</p>
+                            <label for="tipoUsuario" class="form-label">Como deseja participar? *</label>
+                            <select id="tipoUsuario" name="tipoUsuario" class="form-select mb-4" required onchange="alternarCamposCadastro()" aria-controls="dadosPaciente dadosVoluntario">
                                 <option value="">Selecione...</option>
                                 <option value="paciente">Quero buscar apoio</option>
                                 <option value="voluntario">Quero ser voluntário</option>
                             </select>
-                            <label class="form-label">Senha</label>
-                            <input type="password" id="senhaCadastro" class="form-control mb-3" placeholder="Mínimo de 6 caracteres">
-                            <label class="form-label">Confirmar Senha</label>
-                            <input type="password" id="confirmaSenhaCadastro" class="form-control mb-4" placeholder="Repita a senha">
-                            <div id="erroCadastro" class="text-danger small mb-3 fw-bold" style="display: none;"></div>
-                            <button type="submit" class="btn btn-success w-100">Finalizar Cadastro</button>
+                            <fieldset class="mb-4">
+                                <legend class="h5 mb-3">Seus dados</legend>
+                                <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="nomeCadastro" class="form-label">Nome completo *</label>
+                                    <input type="text" id="nomeCadastro" name="nomeCadastro" class="form-control" required autocomplete="name" minlength="3" maxlength="100">
+                                    <div class="invalid-feedback">Confira o preenchimento deste campo.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="nomeSocialCadastro" class="form-label">Nome pelo qual prefere ser chamado (opcional)</label>
+                                    <input type="text" id="nomeSocialCadastro" name="nomeSocialCadastro" class="form-control" maxlength="60">
+                                    <div class="invalid-feedback">Confira o preenchimento deste campo.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="cpfCadastro" class="form-label">CPF *</label>
+                                    <input type="text" id="cpfCadastro" name="cpfCadastro" class="form-control" required inputmode="numeric" maxlength="14" placeholder="000.000.000-00">
+                                    <div class="invalid-feedback">Confira o preenchimento deste campo.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="nascimentoCadastro" class="form-label">Data de nascimento *</label>
+                                    <input type="date" id="nascimentoCadastro" name="nascimentoCadastro" class="form-control" required autocomplete="bday">
+                                    <div class="invalid-feedback">Confira o preenchimento deste campo.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="emailCadastro" class="form-label">E-mail *</label>
+                                    <input type="email" id="emailCadastro" name="emailCadastro" class="form-control" required autocomplete="email" placeholder="seu@email.com">
+                                    <div class="invalid-feedback">Confira o preenchimento deste campo.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="telefoneCadastro" class="form-label">Telefone com DDD *</label>
+                                    <input type="tel" id="telefoneCadastro" name="telefoneCadastro" class="form-control" required autocomplete="tel" maxlength="15" placeholder="(00) 00000-0000">
+                                    <div class="invalid-feedback">Confira o preenchimento deste campo.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="cepCadastro" class="form-label">CEP *</label>
+                                    <input type="text" id="cepCadastro" name="cepCadastro" class="form-control" required autocomplete="postal-code" inputmode="numeric" maxlength="9" placeholder="00000-000">
+                                    <div class="invalid-feedback">Confira o preenchimento deste campo.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="cidadeCadastro" class="form-label">Cidade *</label>
+                                    <input type="text" id="cidadeCadastro" name="cidadeCadastro" class="form-control" required autocomplete="address-level2" maxlength="80">
+                                    <div class="invalid-feedback">Confira o preenchimento deste campo.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="estadoCadastro" class="form-label">Estado *</label>
+                                    <select id="estadoCadastro" name="estadoCadastro" class="form-select" required>
+                                        <option value="">Selecione...</option>
+                                        <option value="AC">AC</option>
+                                        <option value="AL">AL</option>
+                                        <option value="AP">AP</option>
+                                        <option value="AM">AM</option>
+                                        <option value="BA">BA</option>
+                                        <option value="CE">CE</option>
+                                        <option value="DF">DF</option>
+                                        <option value="ES">ES</option>
+                                        <option value="GO">GO</option>
+                                        <option value="MA">MA</option>
+                                        <option value="MT">MT</option>
+                                        <option value="MS">MS</option>
+                                        <option value="MG">MG</option>
+                                        <option value="PA">PA</option>
+                                        <option value="PB">PB</option>
+                                        <option value="PR">PR</option>
+                                        <option value="PE">PE</option>
+                                        <option value="PI">PI</option>
+                                        <option value="RJ">RJ</option>
+                                        <option value="RN">RN</option>
+                                        <option value="RS">RS</option>
+                                        <option value="RO">RO</option>
+                                        <option value="RR">RR</option>
+                                        <option value="SC">SC</option>
+                                        <option value="SP">SP</option>
+                                        <option value="SE">SE</option>
+                                        <option value="TO">TO</option>
+                                    </select>
+                                    <div class="invalid-feedback">Selecione uma opção.</div>
+                                </div>
+                                </div>
+                            </fieldset>
+                            <fieldset id="dadosPaciente" class="mb-4" hidden disabled>
+                                <legend class="h5 mb-3">Como podemos ajudar?</legend>
+                                <p class="small text-muted">Essas preferências ajudam a encontrar uma opção de apoio para você.</p>
+                                <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="tipoApoio" class="form-label">Apoio que procura *</label>
+                                    <select id="tipoApoio" name="tipoApoio" class="form-select" required>
+                                        <option value="">Selecione...</option>
+                                        <option value="Atendimento psicológico individual">Atendimento psicológico individual</option>
+                                        <option value="Orientação para encontrar atendimento">Orientação para encontrar atendimento</option>
+                                        <option value="Grupo de apoio">Grupo de apoio</option>
+                                    </select>
+                                    <div class="invalid-feedback">Selecione uma opção.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="temaApoio" class="form-label">Tema que gostaria de trabalhar *</label>
+                                    <select id="temaApoio" name="temaApoio" class="form-select" required>
+                                        <option value="">Selecione...</option>
+                                        <option value="Ansiedade e preocupações">Ansiedade e preocupações</option>
+                                        <option value="Autoestima e autoconhecimento">Autoestima e autoconhecimento</option>
+                                        <option value="Relacionamentos e família">Relacionamentos e família</option>
+                                        <option value="Luto e mudanças de vida">Luto e mudanças de vida</option>
+                                        <option value="Estresse e rotina">Estresse e rotina</option>
+                                        <option value="Prefiro conversar no atendimento">Prefiro conversar no atendimento</option>
+                                    </select>
+                                    <div class="invalid-feedback">Selecione uma opção.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="periodoApoio" class="form-label">Melhor período para atendimento *</label>
+                                    <select id="periodoApoio" name="periodoApoio" class="form-select" required>
+                                        <option value="">Selecione...</option>
+                                        <option value="Manhã">Manhã</option>
+                                        <option value="Tarde">Tarde</option>
+                                        <option value="Noite">Noite</option>
+                                    </select>
+                                    <div class="invalid-feedback">Selecione uma opção.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="diaApoio" class="form-label">Preferência de dias *</label>
+                                    <select id="diaApoio" name="diaApoio" class="form-select" required>
+                                        <option value="">Selecione...</option>
+                                        <option value="Segunda a sexta">Segunda a sexta</option>
+                                        <option value="Sábado">Sábado</option>
+                                        <option value="Sem preferência">Sem preferência</option>
+                                    </select>
+                                    <div class="invalid-feedback">Selecione uma opção.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="contatoApoio" class="form-label">Como prefere receber nosso contato *</label>
+                                    <select id="contatoApoio" name="contatoApoio" class="form-select" required>
+                                        <option value="">Selecione...</option>
+                                        <option value="E-mail">E-mail</option>
+                                        <option value="Telefone">Telefone</option>
+                                    </select>
+                                    <div class="invalid-feedback">Selecione uma opção.</div>
+                                </div>
+                                <div class="col-12">
+                                    <label for="objetivoApoio" class="form-label">O que espera do acompanhamento (opcional)</label>
+                                    <textarea id="objetivoApoio" name="objetivoApoio" class="form-control" rows="4" maxlength="1000" placeholder="Conte apenas o que se sentir confortável em compartilhar." ></textarea>
+                                    <div class="invalid-feedback">Escreva pelo menos 30 caracteres.</div>
+                                </div>
+                                </div>
+                            </fieldset>
+                            <fieldset id="dadosVoluntario" class="mb-4" hidden disabled>
+                                <legend class="h5 mb-3">Seu perfil de voluntário</legend>
+                                <p id="orientacaoVoluntario" class="small text-muted">Informe o registro do seu conselho para atuação em profissão regulamentada. Para facilitação de grupos, descreva sua capacitação e experiência na apresentação.</p>
+                                <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="areaVoluntario" class="form-label">Área de atuação *</label>
+                                    <select id="areaVoluntario" name="areaVoluntario" class="form-select" required>
+                                        <option value="">Selecione...</option>
+                                        <option value="Psicologia">Psicologia</option>
+                                        <option value="Psiquiatria">Psiquiatria</option>
+                                        <option value="Terapia ocupacional">Terapia ocupacional</option>
+                                        <option value="Facilitação de grupos de apoio">Facilitação de grupos de apoio</option>
+                                    </select>
+                                    <div class="invalid-feedback">Selecione uma opção.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="formacaoVoluntario" class="form-label">Formação ou curso de capacitação *</label>
+                                    <input type="text" id="formacaoVoluntario" name="formacaoVoluntario" class="form-control" required maxlength="150">
+                                    <div class="invalid-feedback">Confira o preenchimento deste campo.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="registroVoluntario" class="form-label">Registro profissional (CRP, CRM ou CREFITO) (opcional)</label>
+                                    <input type="text" id="registroVoluntario" name="registroVoluntario" class="form-control" maxlength="40" aria-describedby="orientacaoVoluntario">
+                                    <div class="invalid-feedback">Confira o preenchimento deste campo.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="experienciaVoluntario" class="form-label">Anos de experiência *</label>
+                                    <input type="number" id="experienciaVoluntario" name="experienciaVoluntario" class="form-control" required min="0" max="60" step="1">
+                                    <div class="invalid-feedback">Confira o preenchimento deste campo.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="horasVoluntario" class="form-label">Horas disponíveis por semana *</label>
+                                    <input type="number" id="horasVoluntario" name="horasVoluntario" class="form-control" required min="1" max="40" step="1">
+                                    <div class="invalid-feedback">Confira o preenchimento deste campo.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="publicoVoluntario" class="form-label">Público com que deseja atuar *</label>
+                                    <select id="publicoVoluntario" name="publicoVoluntario" class="form-select" required>
+                                        <option value="">Selecione...</option>
+                                        <option value="Adultos">Adultos</option>
+                                        <option value="Idosos">Idosos</option>
+                                        <option value="Crianças e adolescentes">Crianças e adolescentes</option>
+                                        <option value="Adultos e idosos">Adultos e idosos</option>
+                                    </select>
+                                    <div class="invalid-feedback">Selecione uma opção.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="periodoVoluntario" class="form-label">Período disponível *</label>
+                                    <select id="periodoVoluntario" name="periodoVoluntario" class="form-select" required>
+                                        <option value="">Selecione...</option>
+                                        <option value="Manhã">Manhã</option>
+                                        <option value="Tarde">Tarde</option>
+                                        <option value="Noite">Noite</option>
+                                    </select>
+                                    <div class="invalid-feedback">Selecione uma opção.</div>
+                                </div>
+                                <div class="col-12">
+                                    <label for="apresentacaoVoluntario" class="form-label">Apresentação profissional *</label>
+                                    <textarea id="apresentacaoVoluntario" name="apresentacaoVoluntario" class="form-control" rows="4" maxlength="1000" placeholder="Conte sua experiência, áreas de interesse e como deseja contribuir com a rede." required minlength="30"></textarea>
+                                    <div class="invalid-feedback">Escreva pelo menos 30 caracteres.</div>
+                                </div>
+                                </div>
+                            </fieldset>
+                            <fieldset class="mb-4">
+                                <legend class="h5 mb-3">Acesso à conta</legend>
+                                <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="senhaCadastro" class="form-label">Senha *</label>
+                                    <input type="password" id="senhaCadastro" name="senhaCadastro" class="form-control" required autocomplete="new-password" minlength="6" placeholder="Mínimo de 6 caracteres">
+                                    <div class="invalid-feedback">Confira o preenchimento deste campo.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="confirmaSenhaCadastro" class="form-label">Confirmar senha *</label>
+                                    <input type="password" id="confirmaSenhaCadastro" name="confirmaSenhaCadastro" class="form-control" required autocomplete="new-password" minlength="6" placeholder="Repita a senha">
+                                    <div class="invalid-feedback">Confira o preenchimento deste campo.</div>
+                                </div>
+                                </div>
+                            </fieldset>
+                            <div class="form-check mb-3">
+                                <input type="checkbox" id="autorizacaoContato" name="autorizacaoContato" class="form-check-input" required>
+                                <label for="autorizacaoContato" class="form-check-label">Autorizo o contato da Rede de Apoio para tratar do meu cadastro e dos atendimentos solicitados. *</label>
+                                <div class="invalid-feedback">A autorização é necessária para continuar.</div>
+                            </div>
+                            <div id="erroCadastro" class="text-danger small mb-3 fw-bold" style="display: none;" role="status" aria-live="polite"></div>
+                            <button type="submit" class="btn btn-success w-100">Finalizar cadastro</button>
                         </form>
                         <div class="text-center mt-3">
                             <a href="login.html" class="text-muted small">Já tem uma conta? Entre aqui.</a>

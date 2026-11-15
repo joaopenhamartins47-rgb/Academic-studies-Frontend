@@ -28,19 +28,8 @@ body {
     display: block;
     font-size: 10px;
     color: #6c8179;
-    margin-left: 31px;
+    margin-left: 0;
     margin-top: -4px;
-}
-
-.logo {
-    display: inline-flex;
-    width: 27px;
-    height: 27px;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid #238466;
-    border-radius: 50%;
-    margin-right: 4px;
 }
 
 .nav-link {
@@ -114,79 +103,12 @@ body {
     border-color: #0f624a;
 }
 
-.hero-card {
-    width: 360px;
+.hero-photo {
+    display: block;
+    width: 100%;
     height: 360px;
-    max-width: 100%;
-    margin: auto;
-    border-radius: 50%;
-    background: #dceee2;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 20px 50px rgba(22, 124, 93, .12);
-}
-
-.heart {
-    position: absolute;
-    top: 48px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 75px;
-    height: 55px;
-    background: white;
-    border-radius: 50%;
-    color: #80ae91;
-    font-size: 36px;
-    padding-top: 2px;
-}
-
-.person {
-    position: absolute;
-    bottom: 45px;
-    width: 105px;
-    height: 180px;
-    border-radius: 55px 55px 25px 25px;
-}
-
-.person:before {
-    content: "";
-    position: absolute;
-    width: 72px;
-    height: 72px;
-    border-radius: 50%;
-    top: -55px;
-    left: 16px;
-    background: #f0c4a4;
-}
-
-.person-1 {
-    left: 65px;
-    background: #2b8b68;
-}
-
-.person-1:after {
-    content: "";
-    position: absolute;
-    width: 100px;
-    height: 90px;
-    background: #193d34;
-    border-radius: 50%;
-    top: -67px;
-    left: 3px;
-    z-index: -1;
-}
-
-.person-2 {
-    right: 60px;
-    background: #e7e0d6;
-}
-
-.plant {
-    position: absolute;
-    right: 18px;
-    bottom: 25px;
-    font-size: 80px;
-    color: #4e9470;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
 .benefits {
@@ -318,13 +240,10 @@ footer a:hover {
 }
 
 .article-image {
-    height: 170px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #e0eee4;
-    color: #6a9b7e;
-    font-size: 70px;
+    display: block;
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
 }
 
 .article-card a {
@@ -392,12 +311,7 @@ footer a:hover {
         padding: 60px 0;
     }
 
-    .hero-card {
-        width: 290px;
-        height: 290px;
-    }
-
-    .person {
+.person {
         transform: scale(.8);
         transform-origin: bottom;
     }
@@ -483,4 +397,48 @@ footer a:hover {
 
 .fade-in {
     animation: fade-in 3s ease;
+}
+/* Fotos e cartões dos perfis de demonstração. */
+.professional-photo {
+    display: block;
+    width: 128px;
+    height: 128px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #eaf4ed;
+    margin: 0 auto 18px;
+}
+
+.professional-category {
+    align-self: center;
+    padding: 5px 12px;
+    border-radius: 20px;
+    background: #edf7f0;
+    color: #17684f;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.professional-card:hover {
+    border-color: #68a98e;
+    box-shadow: 0 10px 28px rgba(22, 124, 93, .12);
+}
+
+.article-card .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.article-card .card-body a {
+    margin-top: auto;
+}
+
+.article-card .article-image {
+    border-radius: 14px 14px 0 0;
+}
+
+.group-photo {
+    border-radius: 10px;
 }

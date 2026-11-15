@@ -12,7 +12,7 @@
 		<nav class="navbar navbar-expand-lg fixed-top">
 			<div class="container">
 				<a class="navbar-brand fw-bold" href="index.html">
-					<span class="logo">♡</span> Rede de Apoio
+					Rede de Apoio
 					<small>Saúde Mental</small>
 				</a>
 				<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
@@ -27,7 +27,7 @@
 						<li><a class="nav-link" href="faq.html">FAQ</a></li>
 						<li><a class="nav-link" href="contato.html">Contato</a></li>
 						<li><a class="btn btn-outline-success ms-lg-2" href="login.html">Entrar</a></li>
-						<li><a class="btn btn-success ms-lg-2" href="login.html">Cadastrar</a></li>
+						<li><a class="btn btn-success ms-lg-2" href="cadastro.html">Cadastrar</a></li>
 					</ul>
 					<div class="d-flex align-items-center gap-2 ms-lg-3 mt-3 mt-lg-0 border-start ps-lg-3 border-secondary-subtle">
 						<button onclick="aumentarFonte()" class="btn btn-sm btn-outline-secondary" title="Aumentar Fonte">A+</button>
@@ -42,58 +42,139 @@
 				<div class="mb-4 fade-bottom">
 					<span class="tag">ENCONTRE APOIO</span>
 					<h1>Voluntários e grupos de apoio</h1>
-					<p class="text-muted">Exemplos de perfis para demonstração do layout.</p>
+					<p class="text-muted">Conheça os profissionais, suas áreas de atuação e as opções de atendimento.</p>
 				</div>
 				<div class="row g-3 mb-4 fade-left">
 					<div class="col-md-8">
-						<input id="busca" class="form-control" placeholder="Buscar por nome ou palavra-chave" onkeyup="filtrarVoluntarios()">
+						<input id="busca" class="form-control" placeholder="Buscar por nome ou palavra-chave" oninput="filtrarVoluntarios()" aria-label="Buscar profissionais">
 					</div>
 					<div class="col-md-4">
-						<select class="form-select" id="especialidade" onchange="filtrarVoluntarios()">
+						<select class="form-select" id="especialidade" aria-label="Filtrar por especialidade" onchange="filtrarVoluntarios()">
 							<option value="">Todas as especialidades</option>
-							<option value="Psicóloga">Psicologia</option>
-							<option value="Terapeuta">Terapia</option>
+							<option value="Psicologia">Psicologia</option>
+							<option value="Psiquiatria">Psiquiatria</option>
+                            <option value="Terapia ocupacional">Terapia ocupacional</option>
 							<option value="Grupo de Apoio">Grupo de apoio</option>
 						</select>
 					</div>
 				</div>
+				<p class="small text-muted" id="resultadoBusca" role="status" aria-live="polite">9 perfis encontrados.</p>
 				<div class="row g-4 fade-up" id="lista">
-					<div class="col-md-6 col-lg-4 volunteer">
-						<div class="card h-100 text-center p-4">
-							<div class="avatar">AS</div>
-							<h4>Dra. Ana Souza</h4>
-							<p class="text-success">Psicóloga Clínica</p>
-							<p class="small">Ansiedade, depressão e autoestima.</p>
-							<p class="small">Disponível: seg. a sex.</p>
-							<a href="agendamento.html?prof=ana" class="btn btn-outline-success">Ver perfil</a>
-						</div>
-					</div>
-					<div class="col-md-6 col-lg-4 volunteer">
-						<div class="card h-100 text-center p-4">
-							<div class="avatar">LM</div>
-							<h4>Lucas Mendes</h4>
-							<p class="text-success">Terapeuta</p>
-							<p class="small">Estresse, relacionamentos e foco.</p>
-							<p class="small">Disponível: ter. e qui.</p>
-							<a href="agendamento.html?prof=lucas" class="btn btn-outline-success">Ver perfil</a>
-						</div>
-					</div>
-					<div class="col-md-6 col-lg-4 volunteer">
-						<div class="card h-100 text-center p-4">
-							<div class="avatar">FG</div>
-							<h4>Grupo Florescer</h4>
-							<p class="text-success">Grupo de Apoio</p>
-							<p class="small">Apoio emocional em grupo para diferentes temas.</p>
-							<p class="small">Sábados — 10h</p>
-							<a href="agendamento.html?prof=grupo" class="btn btn-outline-success">Ver grupo</a>
-						</div>
-					</div>
+					<div class="col-md-6 col-lg-4 volunteer" data-especialidade="Psicologia">
+                        <div class="card professional-card h-100 text-center p-4">
+                            <img src="img/profissionais/ana.jpg" class="professional-photo" width="128" height="128" alt="Foto ilustrativa do perfil de Dra. Ana Souza" loading="lazy">
+                            <span class="professional-category">Psicologia</span>
+                            <h2 class="h4 mt-3">Dra. Ana Souza</h2>
+                            <p class="text-success fw-semibold">Psicóloga Clínica</p>
+                            <p class="small professional-description">Escuta acolhedora e atenção à ansiedade e à autoestima.</p>
+                            <p class="small text-muted mb-1">Público: Adultos</p>
+                            <p class="small text-muted">Segunda a sexta · Online</p>
+                            <a href="agendamento.html?prof=ana" class="btn btn-outline-success mt-auto" aria-label="Ver perfil de Dra. Ana Souza">Ver perfil</a>
+                        </div>
+                    </div>
+					<div class="col-md-6 col-lg-4 volunteer" data-especialidade="Terapia ocupacional">
+                        <div class="card professional-card h-100 text-center p-4">
+                            <img src="img/profissionais/lucas.jpg" class="professional-photo" width="128" height="128" alt="Foto ilustrativa do perfil de Lucas Mendes" loading="lazy">
+                            <span class="professional-category">Terapia ocupacional</span>
+                            <h2 class="h4 mt-3">Lucas Mendes</h2>
+                            <p class="text-success fw-semibold">Terapeuta Ocupacional</p>
+                            <p class="small professional-description">Estratégias práticas para autonomia e organização da rotina.</p>
+                            <p class="small text-muted mb-1">Público: Adultos e idosos</p>
+                            <p class="small text-muted">Terças e quintas · Online</p>
+                            <a href="agendamento.html?prof=lucas" class="btn btn-outline-success mt-auto" aria-label="Ver perfil de Lucas Mendes">Ver perfil</a>
+                        </div>
+                    </div>
+					<div class="col-md-6 col-lg-4 volunteer" data-especialidade="Psiquiatria">
+                        <div class="card professional-card h-100 text-center p-4">
+                            <img src="img/profissionais/beatriz.jpg" class="professional-photo" width="128" height="128" alt="Foto ilustrativa do perfil de Dra. Beatriz Lima" loading="lazy">
+                            <span class="professional-category">Psiquiatria</span>
+                            <h2 class="h4 mt-3">Dra. Beatriz Lima</h2>
+                            <p class="text-success fw-semibold">Psiquiatra</p>
+                            <p class="small professional-description">Avaliação cuidadosa e plano de cuidado construído em conjunto.</p>
+                            <p class="small text-muted mb-1">Público: Adultos</p>
+                            <p class="small text-muted">Segundas e quartas · Online</p>
+                            <a href="agendamento.html?prof=beatriz" class="btn btn-outline-success mt-auto" aria-label="Ver perfil de Dra. Beatriz Lima">Ver perfil</a>
+                        </div>
+                    </div>
+					<div class="col-md-6 col-lg-4 volunteer" data-especialidade="Psicologia">
+                        <div class="card professional-card h-100 text-center p-4">
+                            <img src="img/profissionais/rafael.jpg" class="professional-photo" width="128" height="128" alt="Foto ilustrativa do perfil de Rafael Oliveira" loading="lazy">
+                            <span class="professional-category">Psicologia</span>
+                            <h2 class="h4 mt-3">Rafael Oliveira</h2>
+                            <p class="text-success fw-semibold">Psicólogo Clínico</p>
+                            <p class="small professional-description">Apoio para lidar com estresse, relacionamentos e limites.</p>
+                            <p class="small text-muted mb-1">Público: Adultos</p>
+                            <p class="small text-muted">Segunda a sexta · Online</p>
+                            <a href="agendamento.html?prof=rafael" class="btn btn-outline-success mt-auto" aria-label="Ver perfil de Rafael Oliveira">Ver perfil</a>
+                        </div>
+                    </div>
+					<div class="col-md-6 col-lg-4 volunteer" data-especialidade="Psicologia">
+                        <div class="card professional-card h-100 text-center p-4">
+                            <img src="img/profissionais/mariana.jpg" class="professional-photo" width="128" height="128" alt="Foto ilustrativa do perfil de Mariana Costa" loading="lazy">
+                            <span class="professional-category">Psicologia</span>
+                            <h2 class="h4 mt-3">Mariana Costa</h2>
+                            <p class="text-success fw-semibold">Psicóloga Infantil</p>
+                            <p class="small professional-description">Acolhimento de crianças e adolescentes com orientação às famílias.</p>
+                            <p class="small text-muted mb-1">Público: Crianças e adolescentes</p>
+                            <p class="small text-muted">Terças e sextas · Online</p>
+                            <a href="agendamento.html?prof=mariana" class="btn btn-outline-success mt-auto" aria-label="Ver perfil de Mariana Costa">Ver perfil</a>
+                        </div>
+                    </div>
+					<div class="col-md-6 col-lg-4 volunteer" data-especialidade="Psiquiatria">
+                        <div class="card professional-card h-100 text-center p-4">
+                            <img src="img/profissionais/pedro.jpg" class="professional-photo" width="128" height="128" alt="Foto ilustrativa do perfil de Dr. Pedro Almeida" loading="lazy">
+                            <span class="professional-category">Psiquiatria</span>
+                            <h2 class="h4 mt-3">Dr. Pedro Almeida</h2>
+                            <p class="text-success fw-semibold">Psiquiatra</p>
+                            <p class="small professional-description">Acompanhamento atento do humor, do sono e da saúde ao longo da vida.</p>
+                            <p class="small text-muted mb-1">Público: Adultos e idosos</p>
+                            <p class="small text-muted">Quartas e sextas · Online</p>
+                            <a href="agendamento.html?prof=pedro" class="btn btn-outline-success mt-auto" aria-label="Ver perfil de Dr. Pedro Almeida">Ver perfil</a>
+                        </div>
+                    </div>
+					<div class="col-md-6 col-lg-4 volunteer" data-especialidade="Terapia ocupacional">
+                        <div class="card professional-card h-100 text-center p-4">
+                            <img src="img/profissionais/camila.jpg" class="professional-photo" width="128" height="128" alt="Foto ilustrativa do perfil de Camila Santos" loading="lazy">
+                            <span class="professional-category">Terapia ocupacional</span>
+                            <h2 class="h4 mt-3">Camila Santos</h2>
+                            <p class="text-success fw-semibold">Terapeuta Ocupacional</p>
+                            <p class="small professional-description">Atividades e estratégias para ampliar a participação no cotidiano.</p>
+                            <p class="small text-muted mb-1">Público: Adolescentes e adultos</p>
+                            <p class="small text-muted">Segundas e quintas · Online</p>
+                            <a href="agendamento.html?prof=camila" class="btn btn-outline-success mt-auto" aria-label="Ver perfil de Camila Santos">Ver perfil</a>
+                        </div>
+                    </div>
+					<div class="col-md-6 col-lg-4 volunteer" data-especialidade="Psicologia">
+                        <div class="card professional-card h-100 text-center p-4">
+                            <img src="img/profissionais/andre.jpg" class="professional-photo" width="128" height="128" alt="Foto ilustrativa do perfil de André Ribeiro" loading="lazy">
+                            <span class="professional-category">Psicologia</span>
+                            <h2 class="h4 mt-3">André Ribeiro</h2>
+                            <p class="text-success fw-semibold">Psicólogo Clínico</p>
+                            <p class="small professional-description">Escuta sensível no luto e nas mudanças de vida.</p>
+                            <p class="small text-muted mb-1">Público: Adultos e idosos</p>
+                            <p class="small text-muted">Terças e quintas · Online</p>
+                            <a href="agendamento.html?prof=andre" class="btn btn-outline-success mt-auto" aria-label="Ver perfil de André Ribeiro">Ver perfil</a>
+                        </div>
+                    </div>
+					<div class="col-md-6 col-lg-4 volunteer" data-especialidade="Grupo de apoio">
+                        <div class="card professional-card h-100 text-center p-4">
+                            <img src="img/profissionais/grupo.jpg" class="professional-photo group-photo" width="128" height="128" alt="Ambiente com poltronas, ilustrando um espaço de encontro" loading="lazy">
+                            <span class="professional-category">Grupo de apoio</span>
+                            <h2 class="h4 mt-3">Grupo Florescer</h2>
+                            <p class="text-success fw-semibold">Grupo de Apoio</p>
+                            <p class="small professional-description">Troca de experiências com escuta, respeito e espaço para cada participante.</p>
+                            <p class="small text-muted mb-1">Público: Adultos</p>
+                            <p class="small text-muted">Sábados · Online</p>
+                            <a href="agendamento.html?prof=grupo" class="btn btn-outline-success mt-auto" aria-label="Ver perfil de Grupo Florescer">Conhecer o grupo</a>
+                        </div>
+                    </div>
 				</div>
+                <p id="semResultados" class="alert alert-light border mt-4" hidden>Nenhum perfil encontrado. Tente outro nome ou especialidade.</p>
 			</div>
 		</main>
 		<footer class="alt-footer">
 			<div class="container text-center">
-				<p class="mb-0">© 2026 Rede de Apoio — Projeto acadêmico.</p>
+				<p class="mb-0">© 2026 Rede de Apoio. Todos os direitos reservados.</p>
 			</div>
 		</footer>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
